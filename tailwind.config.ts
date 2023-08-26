@@ -13,6 +13,19 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        '200%': '200% auto',
+      },
+      backgroundPosition: {
+          'right-center': 'right center'
+      },
+      screens: {
+        'xsm': '375px'
+      },
+
     },
   },
   plugins: [],
