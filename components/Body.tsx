@@ -1,8 +1,11 @@
 import React from 'react'
+import Process from './Process'
 
 const Body = () => {
   return (
-    <div>Body</div>
+   <main className='bg-color'>
+        <Process/>
+   </main>
   )
 }
 

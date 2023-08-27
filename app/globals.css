@@ -4,12 +4,23 @@
 
 
 @layer components {
+
+.bg-bluegradient{
+  @apply bg-gradient-to-r from-[#2387FE] via-[#29AFFD] to-[#75c9fa]
+}
 .book-button{
-  @apply py-2 px-3 rounded-md bg-200% bg-gradient-to-r from-[#2387FE] via-[#29AFFD] to-[#75c9fa] text-white hover:bg-right-center transition-[background] duration-[400ms] ease-in-out 
+  @apply py-2 px-3 rounded-md bg-200% bg-bluegradient text-white hover:bg-right-center transition-[background] duration-[400ms] ease-in-out 
 }
 
 .nav-links{
   @apply relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#29AFFD] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center
+}
+.bg-color{
+  @apply bg-gradient-to-r from-[#FFFFFF] via-[#F0FAFC] to-[#e7f6fd]
+}
+
+.process-cards{
+  @apply w-[70px] h-[70px] flex items-center justify-center bg-[#f2f3f5] border-white border-2 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] rounded-md
 }
 }
 
