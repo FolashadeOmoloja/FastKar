@@ -1,3 +1,5 @@
+
+
 export const NavLinks = [
     { href: "#home", label: "Home" },
     { href: "#how-it-works", label: "How it works" },
@@ -46,3 +48,4 @@ export const vehicles = [
     },
 
 ]
+

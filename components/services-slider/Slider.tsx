@@ -4,22 +4,27 @@ import 'swiper/css'
 import { vehicles } from "@/constants";
 import Image from "next/image";
 import {BsStarFill, BsStarHalf, BsStar} from 'react-icons/bs'
+import { Autoplay,Navigation } from 'swiper/modules';
 
 const Slider = () => {
   return (
 <div className="container mx-auto px-[60px] max-md:px-[20px] max-sm:px-0 max-xsm:max-w-xs">
    <Swiper
          autoplay={{
-          delay: 3000, // Adjust the delay as needed (in milliseconds)
-          disableOnInteraction: false, // Continue autoplay even when user interacts
+          delay: 1000, // Adjust the delay as needed (in milliseconds)
+          disableOnInteraction: true, // Continue autoplay even when user interacts
        }}
- 
    breakpoints={{
     320: {slidesPerView:1, spaceBetween:15},
     640: {slidesPerView: 2, spaceBetween: 32},
     1240: {slidesPerView: 3, spaceBetween: 32}
    }}   
-    enabled={true}>
+    enabled={true}
+    navigation={true}
+    grabCursor={true}
+    modules={[Navigation,Autoplay]} 
+    className="mySwiper"
+    >
     {
         vehicles.map((veh, index) =>{
 

@@ -1,3 +1,4 @@
+import ServiceDetails from "./ServiceDetails"
 import Slider from "./Slider"
 
 
@@ -8,6 +9,7 @@ const Services = () => {
         <h2 className="text-[30px] text-center font-bold mb-12">Explore our afforable vehicles, ride in comfort</h2>
         <div className="">
             <Slider/>
+            <ServiceDetails/>
         </div>
     </section>
   )
