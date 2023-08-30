@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Floater = () => {
   return (
    <section className='flex justify-center'>

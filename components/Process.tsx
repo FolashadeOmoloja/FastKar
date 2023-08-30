@@ -6,7 +6,7 @@ import {BsCalendarHeartFill} from 'react-icons/bs'
 
 const Process = () => {
   return (
-   <section id="how-it-works" className="flex flex-col pt-[130px] items-center p-[3rem] max-xsm:pb-0 pb-0 ">
+   <section id="how-it-works" className="flex flex-col pt-[130px] items-center px-[3rem] max-xsm:px-[32px]">
        <h3 className="mb-1 text-[#494949] text-sm">HOW IT WORKS</h3>
         <h2 className="text-[30px] text-center font-bold mb-12">Your Path to Seamless Travel Solutions</h2>
         <section className="flex max-sm:flex-col max-sm:gap-3">

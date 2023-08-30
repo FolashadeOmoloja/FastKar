@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { BsFillCheckCircleFill } from 'react-icons/bs'
 import {AiFillRightCircle} from 'react-icons/ai'
 

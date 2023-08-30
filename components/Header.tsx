@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Navbar from './Navbar'
 import Herosection from './Herosection'
 import Floater from './Floater'
