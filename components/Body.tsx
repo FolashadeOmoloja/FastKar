@@ -1,4 +1,5 @@
 import Process from './Process'
+import { Testimonials } from './Testimonials'
 import Services from './services-slider/Services'
 
 const Body = () => {
@@ -6,6 +7,7 @@ const Body = () => {
    <main className='bg-color'>
         <Process/>
         <Services/>
+        <Testimonials/>
    </main>
   )
 }
