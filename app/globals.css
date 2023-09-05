@@ -24,6 +24,10 @@
 }
 }
 
+.placeholder-sm::placeholder {
+  font-size: 13px; 
+}
+
 :root {
 
 }

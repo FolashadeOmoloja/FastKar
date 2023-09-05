@@ -62,7 +62,7 @@ export const testimonials = [
     {
         name: 'Claire Victory',
         image: '/user3.png',
-        reviews:"Safety has always been my top concern when choosing a ride service. FastKar's dedication to safety standards, combined with their affordability, made them my go-to choice. Highly recommend!",
+        reviews:"Safety has always been my top concern when choosing a ride service. FastKar's dedication to safety standards, combined with their affordability, made them my go-to choice. Highly recommend and trust!",
         description: 'CEO Umbquie'
     },
     {

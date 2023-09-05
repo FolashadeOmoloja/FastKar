@@ -1,6 +1,8 @@
+
 import Process from './Process'
 import { Testimonials } from './Testimonials'
 import Services from './services-slider/Services'
+import Contact from './Contact/Contact'
 
 const Body = () => {
   return (
@@ -8,6 +10,7 @@ const Body = () => {
         <Process/>
         <Services/>
         <Testimonials/>
+        <Contact/>
    </main>
   )
 }

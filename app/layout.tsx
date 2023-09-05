@@ -1,8 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter,Outfit, Raleway } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
-import Navbar from '@/components/Navbar'
+
 
 const inter = Inter({ subsets: ['latin'] })
 const outfit = Outfit({ subsets: ['latin'] })
@@ -19,12 +18,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-        <ClerkProvider>
+ 
         <html lang="en">
           <body className={outfit.className}>
             {children}
             </body>
         </html>
-      </ClerkProvider>
   )
 }

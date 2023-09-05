@@ -8,7 +8,9 @@ import { Autoplay,Navigation } from 'swiper/modules';
 
 export const Testimonials = () => {
   return (
-<div id="testimonials" className="container mx-auto px-[60px] max-md:px-[20px] max-sm:px-0 max-xsm:max-w-xs">
+<div id="testimonials" className="container pt-[100px] items-center mx-auto px-[60px]  max-xsm:px-[32px] max-xsm:max-w-xs">
+        <h3 className="mb-1 text-[#494949] text-center text-sm">OUR REVIEWS</h3>
+        <h2 className="text-[30px] text-center font-bold mb-12">Here What Our Clients Have To Say!</h2>
    <Swiper
    breakpoints={{
     320: {slidesPerView:1, spaceBetween:15},
@@ -29,7 +31,7 @@ export const Testimonials = () => {
 
 
              return <SwiperSlide key={index}>
-                 <div className="max-w-[370px] p-6 flex flex-col gap-5 rounded-[1rem] mx-auto  bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] ">
+                 <div className="max-w-[370px] p-6 max-xsm:p-3 flex flex-col gap-5 rounded-[1rem] mx-auto  bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] ">
                     <div className="flex ">{stars}</div>
                     <p className="text-gray-700 text-sm ">{user.reviews}</p>
                     <div className="flex gap-3">
