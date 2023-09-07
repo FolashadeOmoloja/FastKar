@@ -28,11 +28,15 @@
   font-size: 13px; 
 }
 
-:root {
-
+.signin-page {
+  background-color: #E3F0F9;
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+  background-color: #E3F0F9;
+}
+
+@media (prefers-color-scheme: light ) {
   :root {
 
   }

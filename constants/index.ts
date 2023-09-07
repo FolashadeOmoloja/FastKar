@@ -9,7 +9,13 @@ export const NavLinks = [
 ];
 
 export const vehicles = [
-    
+    {
+        type: 'Express Ride',
+        image: '/motor.png',
+        star: 4.5,
+        reviews:'289 Reviews',
+        description: 'Efficient motorcycle rides: Affordable way to navigate traffic'
+    },
 
     {
         type: 'Fast Track',

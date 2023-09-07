@@ -1,15 +1,6 @@
-import { authMiddleware } from "@clerk/nextjs";
+//applies to the  entire project if you dont include a defined matcher
+export {default} from "next-auth/middleware"
  
-// This example protects all routes including api/trpc routes
-// Please edit this to allow other routes to be public as needed.
-// See https://clerk.com/docs/references/nextjs/auth-middleware for more information about configuring your middleware
-export default authMiddleware({
-  publicRoutes: ["/"],
-});
- 
-export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
- 
-  
-};
- 
+//applies to matching routes
+
+export const config = {matcher: ['/dashboard']}
