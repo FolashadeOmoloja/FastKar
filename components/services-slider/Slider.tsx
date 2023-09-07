@@ -1,12 +1,24 @@
 "use client"
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRouter } from "next/navigation";
 import 'swiper/css'
 import { vehicles } from "@/constants";
 import Image from "next/image";
 import {BsStarFill, BsStarHalf, BsStar} from 'react-icons/bs'
 import { Autoplay,Navigation } from 'swiper/modules';
 
+
 const Slider = () => {
+
+  const router = useRouter();
+
+  const handleSignInClick = () => {
+    // Redirect the user to the protected sign-in page (e.g., /dashboard)
+    router.push('/dashboard');
+  };
+
+
+
   return (
 <div className="container mx-auto px-[60px] max-md:px-[20px] max-sm:px-0 max-xsm:max-w-xs">
    <Swiper
@@ -56,7 +68,7 @@ const Slider = () => {
                   <span className="text-gray-700 text-sm ">{veh.reviews}</span>
                   </div>
                   <p className="mt-3 px-10">{veh.description}</p>
-                  <button className="w-full h-[65px] rounded-b-[1rem] bg-bluegradient mt-3 text-white font-semibold bg-200% hover:bg-right-center transition-[background] duration-[400ms] ease-in-out ">
+                  <button className="w-full h-[65px] rounded-b-[1rem] bg-bluegradient mt-3 text-white font-semibold bg-200% hover:bg-right-center transition-[background] duration-[400ms] ease-in-out "    onClick={handleSignInClick}>
                       Book Ride
                   </button>
                  </div>

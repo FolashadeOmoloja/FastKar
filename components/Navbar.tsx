@@ -1,7 +1,11 @@
+import BookRideButton from "./BookRideButton";
 import { NavLinks } from "@/constants"
 import Image from "next/image"
 
+
+
 const Navbar = () => {
+
   return (
     <nav className="flex px-[2.5rem] max-lg:justify-between max-lg:px-[2rem] max-xsm:px-[1rem] ">
        <div>
@@ -21,9 +25,7 @@ const Navbar = () => {
           ))}
         </ul>
         <div>
-           <button className="book-button mt-10 me-6 max-xsm:me-2 max-xsm:mt-8">
-             Book A Ride
-           </button>
+            <BookRideButton className="mt-10 me-6 max-xsm:me-2 max-xsm:mt-8" />
         </div>
     </nav>
   )
