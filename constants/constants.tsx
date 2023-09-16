@@ -31,3 +31,31 @@ export const servicesArr = [
     },
 
 ]
+
+
+export const NavItem = [
+    {
+        icon: <AiOutlineDollar/>,
+        page: 'Home',
+    },
+    {
+        icon: <PiHandshakeFill/>,
+        heading: '',
+    },
+    {
+        icon: <TfiHeadphoneAlt/>,
+        heading: 'Awesome customer support',
+        description: 'Exceptional Customer Care for an Awesome Experience.'
+    },
+    {
+        icon: <BsFillCarFrontFill/>,
+        heading: 'Quality Drivers',
+        description: 'Skilled Drivers Ensuring Exceptional Travel Experiences'
+    },
+    {
+        icon: <BsShieldFillCheck/>,
+        heading: 'Secure Travel Solutions',
+        description: 'Reliable and Safe Transportation for Your Peaceful Journeys.'
+    },
+
+]

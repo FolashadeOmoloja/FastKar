@@ -13,7 +13,7 @@ const Header = () => {
        <section className="max-sm:hidden">
           <p className="font-semibold text-lg">Welcome back,Shades!</p>
        </section>
-       <section className="flex items-center gap-2 text-sm">
+       <section className="flex items-center gap-2 text-sm cursor-pointer">
          <div>
             <img src="/user3.png" alt=""  className="w-[50px] h-[50px] rounded-full"/>
          </div>

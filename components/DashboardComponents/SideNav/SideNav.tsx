@@ -1,7 +1,14 @@
-import React from 'react'
+
 
 export const SideNav = () => {
   return (
-    <div>SideNav</div>
+  <nav className="">
+      <ul>
+         <li className="flex gap-2">
+          <span></span>
+          <a href="#">Home</a>
+          </li>
+      </ul>
+  </nav>
   )
 }
