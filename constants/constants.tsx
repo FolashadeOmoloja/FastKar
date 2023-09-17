@@ -1,8 +1,9 @@
 import {AiOutlineDollar} from 'react-icons/ai'
 import {PiHandshakeFill} from 'react-icons/pi'
-import {BsShieldFillCheck} from 'react-icons/bs'
-import {BsFillCarFrontFill} from 'react-icons/bs'
+import {BsShieldFillCheck, BsFillCarFrontFill, BsFillBagCheckFill} from 'react-icons/bs'
 import {TfiHeadphoneAlt} from 'react-icons/tfi'
+import {HiUsers} from 'react-icons/hi'
+import {RiCustomerService2Fill, RiHistoryFill, RiHomeHeartFill} from 'react-icons/ri'
 export const servicesArr = [
     {
         icon: <AiOutlineDollar/>,
@@ -35,27 +36,32 @@ export const servicesArr = [
 
 export const NavItem = [
     {
-        icon: <AiOutlineDollar/>,
+        icon: <RiHomeHeartFill/>,
         page: 'Home',
     },
     {
-        icon: <PiHandshakeFill/>,
-        heading: '',
-    },
-    {
-        icon: <TfiHeadphoneAlt/>,
-        heading: 'Awesome customer support',
-        description: 'Exceptional Customer Care for an Awesome Experience.'
+        icon: <BsFillBagCheckFill/>,
+        page: 'Bookings',
     },
     {
         icon: <BsFillCarFrontFill/>,
-        heading: 'Quality Drivers',
-        description: 'Skilled Drivers Ensuring Exceptional Travel Experiences'
+        page: 'Cars'
     },
     {
-        icon: <BsShieldFillCheck/>,
-        heading: 'Secure Travel Solutions',
-        description: 'Reliable and Safe Transportation for Your Peaceful Journeys.'
+        icon: <HiUsers/>,
+        page: 'Riders',
+    },
+    {
+        icon: <RiHistoryFill/>,
+        page: 'Track Bookings',
+    },
+    {
+        icon: <RiCustomerService2Fill/>,
+        page: 'Customer Support',
+    },
+    {
+        icon: <PiHandshakeFill/>,
+        page: 'Sign Out',
     },
 
 ]

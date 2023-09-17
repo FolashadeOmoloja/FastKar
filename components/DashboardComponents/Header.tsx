@@ -5,7 +5,7 @@ import {BsFillBellFill} from 'react-icons/bs'
 
 const Header = () => {
   return (
-   <header className="bg-color pr-[40px] max-xsm:pr-[10px] flex justify-between items-center h-[100px] border-gray-400 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+   <header className="bg-color pr-[40px] max-xsm:pr-[10px] flex justify-between items-center h-[100px] border-gray-400 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] sticky">
        <section>
           <Image 
           src={"/logo.png"} alt={"logo"} width={100} height={100} className="pl-[10px]"/>

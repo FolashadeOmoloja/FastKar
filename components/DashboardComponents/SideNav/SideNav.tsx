@@ -1,13 +1,19 @@
-
+import { NavItem } from "@/constants/constants"
 
 export const SideNav = () => {
   return (
-  <nav className="">
+  <nav className="sticky top-[100px] left-0 bottom-0 h-full bg-white w-[270px]">
       <ul>
-         <li className="flex gap-2">
-          <span></span>
-          <a href="#">Home</a>
-          </li>
+{
+  NavItem.map((item,index) =>{
+    return(
+      <li className="flex gap-2" key={index}>
+      <span>{item.icon}</span>
+      <a href="#">{item.page}</a>
+      </li>
+    )
+  })
+}
       </ul>
   </nav>
   )
