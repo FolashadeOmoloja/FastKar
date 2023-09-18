@@ -8,22 +8,18 @@ export const SideNav = () => {
 {
   NavItem.map((item,index) =>{
     return(
-      <li className="flex justify-between text-gray-700 mb-[20px] transition duration-300 bg-[#E3F0F9] pl-2 py-2" key={index}>
+      <li className="nav-hover flex justify-between w-[210px] relative text-gray-700 mb-[20px] transition duration-300 bg-[#E3F0F9] pl-2 py-2" key={index}>
         <div className="flex gap-2 ">
-         <div className="p-2 border-[1px] border-gray-300 rounded-lg flex items-center "><span>{item.icon}</span></div>
+         <div className="p-2 border-[1px] border-gray-300 rounded-lg flex items-center item-icon "><span>{item.icon}</span></div>
           <a href="#" className="flex items-center"><span>{item.page}</span></a>
         </div>
-        <div className=" w-[20px] h-[20px] bg-red-500 rounded-l-full"></div>
+        <div className=" w-[20px] h-[50px] absolute top-0 right-0 bg-[#AED6EF] rounded-l-full"></div>
       </li>
     )
   })
 }
       </ul>
-      <div className="relative w-48 h-24 bg-blue-500 text-white text-center flex items-center justify-between transition duration-300">
-      Hover over me!
-      <div className=" w-[50px] h-full bg-red-500 rounded-l-full opacity-0 transition duration-300 hover:opacity-100"></div>
-    </div>
-      
+
   </nav>
   )
 }

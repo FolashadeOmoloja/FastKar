@@ -46,11 +46,14 @@
 }
 }
 
-
-
-
 .nav-hover:hover{
+  color: black;
+}
 
+
+.nav-hover:hover .item-icon{
+background-color: white;
+border: 1px solid white;
 }
 
 .placeholder-sm::placeholder {
