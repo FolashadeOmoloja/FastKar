@@ -3,6 +3,28 @@
 @tailwind utilities;
 
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #E3F0F9;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #E3F0F9;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #AED6EF;
+}
+
+
 @layer components {
 
 .bg-bluegradient{
