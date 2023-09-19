@@ -1,5 +1,6 @@
 import {AiOutlineDollar} from 'react-icons/ai'
 import {PiHandshakeFill} from 'react-icons/pi'
+import { BiLogOut} from 'react-icons/bi'
 import {BsShieldFillCheck, BsFillCarFrontFill, BsFillBagCheckFill} from 'react-icons/bs'
 import {TfiHeadphoneAlt} from 'react-icons/tfi'
 import {HiUsers} from 'react-icons/hi'
@@ -38,30 +39,37 @@ export const NavItem = [
     {
         icon: <RiHomeHeartFill/>,
         page: 'Home',
+        href: '#'
     },
     {
         icon: <BsFillBagCheckFill/>,
         page: 'Bookings',
+        href: '#'
     },
     {
         icon: <BsFillCarFrontFill/>,
-        page: 'Cars'
+        page: 'Cars',
+        href: '#'
     },
     {
         icon: <HiUsers/>,
         page: 'Riders',
+        href: '#'
     },
     {
         icon: <RiHistoryFill/>,
         page: 'Track Bookings',
+        href: '#'
     },
     {
         icon: <RiCustomerService2Fill/>,
         page: 'Customer Support',
+        href: '#'
     },
     {
-        icon: <PiHandshakeFill/>,
+        icon: <BiLogOut/>,
         page: 'Sign Out',
+        href: '/api/auth/signout'
     },
 
 ]

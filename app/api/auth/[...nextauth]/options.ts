@@ -27,7 +27,7 @@ providers: [
           password: { label: "Password", type: "password" }
         },
         async authorize(credentials) {
-           const user = {id: '42', password: 'howfar', username: 'Lucky Bae'}
+           const user = {id: '42', password: 'howfar', username: 'James Omoloja'}
            if  (credentials?.username === user.username && credentials?.password === user.password){
             return user
            } else {
