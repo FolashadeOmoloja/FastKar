@@ -46,15 +46,22 @@
 }
 }
 
-.nav-hover:hover{
+.nav-hover:hover, .mobilenav-hover:hover, .active{
   color: black;
 }
 
 
-.nav-hover:hover .item-icon{
+
+
+.nav-hover:hover .item-icon, .active .item-icon{
 background-color: white;
 border: 1px solid white;
 }
+
+.mobilenav-hover:hover .item-icon{
+  background-color: #AED6EF;
+  border: 1px solid #AED6EF;
+  }
 
 .placeholder-sm::placeholder {
   font-size: 13px; 

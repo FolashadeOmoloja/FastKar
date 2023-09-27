@@ -39,32 +39,38 @@ export const NavItem = [
     {
         icon: <RiHomeHeartFill/>,
         page: 'Home',
-        href: '#'
+        href: '/dashboard',
+        index: 0,
     },
     {
         icon: <BsFillBagCheckFill/>,
         page: 'Bookings',
-        href: '#'
+        href: '/dashboard/bookings',
+        index: 1,
     },
     {
         icon: <BsFillCarFrontFill/>,
         page: 'Cars',
-        href: '#'
+        href: '#',
+        index: 2,
     },
     {
         icon: <HiUsers/>,
         page: 'Riders',
-        href: '#'
+        href: '#',
+        index: 3,
     },
     {
         icon: <RiHistoryFill/>,
         page: 'Track Bookings',
-        href: '#'
+        href: '#',
+        index: 4,
     },
     {
         icon: <RiCustomerService2Fill/>,
         page: 'Customer Support',
-        href: '#'
+        href: '#',
+        index: 5,
     },
     {
         icon: <BiLogOut/>,
