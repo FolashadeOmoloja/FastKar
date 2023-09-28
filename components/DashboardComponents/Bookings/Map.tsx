@@ -2,7 +2,7 @@
 
 const Map = () => {
   return (
-    <section className='bg-blue-500 basis-[50%]'>
+    <section className='bg-blue-500 basis-[70%]'>
         map
     </section>
   )

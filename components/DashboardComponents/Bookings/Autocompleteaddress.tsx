@@ -3,10 +3,10 @@ import {HiOutlineLocationMarker} from 'react-icons/hi'
 
 const AutocompleteAddress = () => {
   return (
-    <section className='h-[200vh]'>
+    <section className=''>
         <section className='flex justify-between text-[#2387FE]'>
             <span className=' text-lg '>Trip Details</span>
-            <div className='mr-[20px]'>
+            <div className='mr-[20px] cursor'>
                 <PiArrowsLeftRightBold />
             </div>
         </section>

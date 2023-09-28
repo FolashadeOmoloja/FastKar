@@ -15,7 +15,7 @@ export default function RootLayout({
             <Header/>
             <SideNav/>
             <MobileSidebar/>
-            <section className="dashboardsection h-full w-full p-8">
+            <section className="dashboardsection h-full w-full p-8 z-0">
             {children}
                
         </section>
