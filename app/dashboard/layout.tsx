@@ -1,6 +1,6 @@
 import Header from '@/components/DashboardComponents/Header'
+import MobileSidebar from '@/components/DashboardComponents/SideNav/MobileNav'
 import { SideNav } from '@/components/DashboardComponents/SideNav/SideNav'
-import { Inter,Outfit, Raleway } from 'next/font/google'
 
 
 export default function RootLayout({
@@ -11,10 +11,14 @@ export default function RootLayout({
   return (
  
         <html lang="en">
-          <body>
+          <body >
             <Header/>
             <SideNav/>
+            <MobileSidebar/>
+            <section className="fixed w-full p-8 top-[100px] left-[268px] max-md:left-0 z-0 ">
             {children}
+               
+        </section>
             </body>
         </html>
   )

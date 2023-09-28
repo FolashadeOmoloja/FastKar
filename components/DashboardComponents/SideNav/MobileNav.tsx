@@ -12,9 +12,9 @@ const MobileSidebar = () => {
   };
 
   return (
-    <nav className="flex">
+    <nav className="flex absolute right-[20px] top-[40px] md:hidden">
       {isOpen && (
-        <div className="fixed inset-0 bg-black opacity-30" onClick={toggleSidebar}></div>
+        <div className="fixed inset-0 z-40 bg-black opacity-30" onClick={toggleSidebar}></div>
       )}
 
       <div
@@ -38,7 +38,7 @@ const MobileSidebar = () => {
              {
                NavItem.map((item,index) =>{
                  return(
-                   <a href={item.href} >
+                   <a href={item.href} key={index} >
                    <li className="mobilenav-hover flex justify-between w-[210px] relative text-gray-700 mb-[20px] transition duration-300 rounded-lg pl-[10px] " key={index}>
                      <div className="flex gap-2 ">
                       <div className="p-2 border-[1px] border-gray-300 rounded-lg flex items-center item-icon "><span>{item.icon}</span></div>
