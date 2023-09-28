@@ -46,6 +46,27 @@
 }
 }
 
+
+/* dashboard section class */
+.dashboardsection {
+  position: absolute;
+  top: 100px;
+  left: 268px;
+  max-width: calc(100% - 268px);
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .dashboardsection {
+    position: static;
+    top: auto;
+    left: auto;
+    max-width: none;
+    overflow-x: auto;
+  }
+}
+
+
 .nav-hover:hover, .mobilenav-hover:hover, .active{
   color: black;
 }

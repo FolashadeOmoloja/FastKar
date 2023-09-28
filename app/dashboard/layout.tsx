@@ -15,7 +15,7 @@ export default function RootLayout({
             <Header/>
             <SideNav/>
             <MobileSidebar/>
-            <section className="fixed w-full p-8 top-[100px] left-[268px] max-md:left-0 z-0 ">
+            <section className="dashboardsection h-full w-full p-8">
             {children}
                
         </section>
