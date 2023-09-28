@@ -9,19 +9,19 @@ const AutocompleteAddress = () => {
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
-    console.log('flipped')
+
   };
 
   return (
     <section className=''>
       <section className={`flex justify-between text-[#2387FE] `}>
         <span className='text-lg '>Trip Details</span>
-        <div className='mr-[20px] cursor-pointer flip' onClick={handleFlip}>
+        <div className='mr-[20px] cursor-pointer flip text-[20px]' onClick={handleFlip}>
           <PiArrowsLeftRightBold />
         </div>
       </section>
       <section className='relative'>
-        <div className='h-[105px] w-[10px] absolute top-[55px]'>
+        <div className='h-[105px] w-[10px] absolute top-[75px]'>
           <img src="/mapline.png" alt="" className='h-full w-full' />
         </div>
         <section className={`pr-5 pl-3  text-gray-700 text-sm flex flex-col ${isFlipped ? 'flip' : ''} ${isFlipped ? 'flex-col-reverse' : ''}`}>
