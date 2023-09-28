@@ -29,7 +29,7 @@ const AutocompleteAddress = () => {
             <label className='mb-5 '>FROM</label>
             <input
               type="text"
-              className='bg-transparent p-2 border-b border-gray-600 focus:outline-none'
+              className='bg-transparent p-2 border-b border-gray-600 outline-none focus:border-[#2387FE]'
               placeholder='address'
             />
             <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
@@ -40,7 +40,7 @@ const AutocompleteAddress = () => {
             <label className='mb-5 '>TO</label>
             <input
               type="text"
-              className='bg-transparent p-2 border-b border-gray-600 focus:outline-none'
+              className='bg-transparent p-2 border-b border-gray-600 outline-none focus:border-[#2387FE]'
               placeholder='address'
             />
             <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
