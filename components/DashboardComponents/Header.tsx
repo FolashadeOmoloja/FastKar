@@ -10,7 +10,7 @@ const Header = async () => {
   const session = await getServerSession(options)
 
   return (
-   <header className="fixed right-0 left-0 top-0 bg-color pr-[40px] max-sm:px-[20px] flex justify-between items-center h-[100px] border-b-2 border-[rgba(0,_0,_0,_0.24)] ">
+   <header className="fixed right-0 left-0 top-0 bg-color pr-[40px] max-md:px-[20px] flex justify-between items-center h-[100px] border-b-2 border-[rgba(0,_0,_0,_0.24)] ">
        <section className="max-md:hidden">
           <Image 
           src={"/logo.png"} alt={"logo"} width={100} height={100} className="pl-[10px]"/>
