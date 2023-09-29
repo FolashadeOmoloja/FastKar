@@ -16,9 +16,9 @@ const Map = () => {
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker icon={
                     new L.Icon({
-                        iconUrl: '/locationmarker.png',
-                        iconRetinaUrl: '/locationmarker.png',
-                        iconSize: [25, 30],
+                        iconUrl: '/cartooncar.png',
+                        iconRetinaUrl: '/cartooncar.png',
+                        iconSize: [50, 50],
                         iconAnchor: [12.5, 41],
                         popupAnchor: [0, -41],
                         shadowSize: [41, 41],
