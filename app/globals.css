@@ -93,24 +93,7 @@ border: 1px solid white;
 }
 
 
-/* flip functionality */
-/* CSS */
-/* .flip {
-  transition: transform 0.5s ease;
-}
 
-.flip.reverse {
-  transform: scaleY(-1);
-}
-
-/* Add translateY transition if needed */
-.flip.translateY {
-  transition: translateY 0.5s ease;
-}
-
-.flip.reverse.translateY {
-  transform: scaleY(-1) translateY(-100%);
-} 
 
 
 :root {
