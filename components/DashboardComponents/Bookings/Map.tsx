@@ -29,10 +29,26 @@ const Map:React.FC<Iprop> = ({position}) => {
                         shadowSize: [41, 41],
                     })
                 } position={position}>
+            
                      <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup>
                 </Marker>
+                <Marker icon={
+                  new L.Icon({
+                      iconUrl: '/cartooncar.png',
+                      iconRetinaUrl: '/cartooncar.png',
+                      iconSize: [50, 50],
+                      iconAnchor: [12.5, 41],
+                      popupAnchor: [0, -41],
+                      shadowSize: [41, 41],
+                  })
+              } position={[6.4296012, 3.4172646]}>
+          
+                   <Popup>
+                      A pretty CSS3 popup. <br /> Easily customizable.
+                  </Popup>
+              </Marker>
     </MapContainer>
     </section>
   )

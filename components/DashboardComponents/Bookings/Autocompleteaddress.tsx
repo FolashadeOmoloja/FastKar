@@ -66,7 +66,7 @@ const AutocompleteAddress:React.FC<Iprop> = ({addressFrom, addressTo, handleAddr
               <HiOutlineLocationMarker />
             </span>
           </div>
-          <button type="submit" className='book-button'> Set Location </button>
+          <button type="submit" className='book-button mt-10'> Set Location </button>
         </form>
       </section>
     </section>

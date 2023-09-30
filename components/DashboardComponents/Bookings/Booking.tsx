@@ -19,7 +19,7 @@ const DynamicMap = dynamic(() => import('../../../components/DashboardComponents
 const Booking = () => {
   const [addressFrom, setAddressFrom] = useState('');
   const [addressTo, setAddressTo] = useState('');
-  const [markerPosition, setMarkerPosition] = useState([51.505, -0.09]);
+  const [markerPosition, setMarkerPosition] = useState([6.4422871, 3.4874378]);
   
   const handleAddressChange = (e:any) => {
     const { name, value } = e.target;
