@@ -71,17 +71,17 @@ const Booking = () => {
     <section className="flex max-md:flex-col-reverse max-md:gap-[50px]">
         <section className=' basis-[30%]'>
            <AutocompleteAddress handleAddressChange={handleAddressChange} addressFrom={addressFrom} addressTo={addressTo} handleAddressSubmit={handleAddressSubmit}/>
+                       <GeoSearchComponent  />
         </section>
         <MapContainer
-      center={secondMarkerPosition}
+      center={secondMarkerPosition as any}
       zoom={13}
       className='w-full md:h-full max-md:h-[70vh] rounded-lg'
-      id='mapobject'
     >
            <DynamicMap position={markerPosition} secondPosition={secondMarkerPosition}/>
         
            </MapContainer>
-           <GeoSearchComponent  />
+
 
         
 

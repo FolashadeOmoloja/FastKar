@@ -24,18 +24,18 @@ const Map: React.FC<Iprop> = ({ position, secondPosition }) => {
   const provider = new OpenStreetMapProvider();
 
   // Create a GeoSearchControl instance and add it to the map
-  const searchControl = new GeoSearchControl({
-    provider: provider,
-    autoCompleteDelay: 250,
-    showMarker: true,
-    showPopup: false,
-    marker: {
-      icon: new L.Icon.Default(),
-      draggable: false,
-    },
-  });
+  // const searchControl = new GeoSearchControl({
+  //   provider: provider,
+  //   autoCompleteDelay: 250,
+  //   showMarker: true,
+  //   showPopup: false,
+  //   marker: {
+  //     icon: new L.Icon.Default(),
+  //     draggable: false,
+  //   },
+  // });
 
-  searchControl.addTo(map);
+  // searchControl.addTo(map);
 
   return (
     <section className='basis-[70%] h-[70vh] border-2 border-[#2387FE] rounded-lg'>
