@@ -63,6 +63,15 @@ const AutocompleteAddress:React.FC<Iprop> = ({}) => {
               placeholder='address'
               onChange={(e) => setSource(e.target.value)}
             />
+                        {addressList?.suggestions?
+            <div className='shadow-md p-1 rounded-md
+             w-full bg-white z-20'>
+            {addressList?.suggestions.map((item:any,index:number)=>(
+                <h2 key={index} className='p-3 hover:bg-gray-100
+                cursor-pointer'
+             >{item.full_address} hi</h2>
+            ))}
+           </div>:null}
             <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
               <HiOutlineLocationMarker />
             </span>
