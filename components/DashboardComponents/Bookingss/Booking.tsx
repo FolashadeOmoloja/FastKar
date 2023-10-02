@@ -1,17 +1,23 @@
 "use client"
 import { useState } from "react";
 import AutocompleteAddress from "./Autocompleteaddress"
+import GeoSearchComponent from "./GeoSearch";
 // Import the library
 // @ts-ignore
-import { OpenStreetMapProvider } from 'leaflet-geosearch';
+import { OpenStreetMapProvider} from 'leaflet-geosearch';
+import { MapContainer } from 'react-leaflet';
+
 import dynamic from 'next/dynamic'
+import L from 'leaflet';
 
 
 
-
-const DynamicMap = dynamic(() => import('../../../components/DashboardComponents/Bookings/Map'), {
+const DynamicMap = dynamic(() => import('../Bookingss/Map'), {
   ssr: false
 });
+
+
+
 
 
 
@@ -52,13 +58,30 @@ const Booking = () => {
     }
   };
 
+
+  
+
+  // const handleSearch = (results:any) => {
+  //   setSearchResults(results);
+  //   console.log(searchResults)
+
+  // };
+
   return (
     <section className="flex max-md:flex-col-reverse max-md:gap-[50px]">
         <section className=' basis-[30%]'>
            <AutocompleteAddress handleAddressChange={handleAddressChange} addressFrom={addressFrom} addressTo={addressTo} handleAddressSubmit={handleAddressSubmit}/>
         </section>
-  
+        <MapContainer
+      center={secondMarkerPosition}
+      zoom={13}
+      className='w-full md:h-full max-md:h-[70vh] rounded-lg'
+      id='mapobject'
+    >
            <DynamicMap position={markerPosition} secondPosition={secondMarkerPosition}/>
+        
+           </MapContainer>
+           <GeoSearchComponent  />
 
         
 

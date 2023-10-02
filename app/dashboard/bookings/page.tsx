@@ -1,5 +1,5 @@
 
-import Booking from "@/components/DashboardComponents/Bookings/Booking"
+import Booking from "@/components/DashboardComponents/Bookingss/Booking"
 
 
 
