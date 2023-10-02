@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 // @ts-ignore
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
 
-const GeoSearchComponent = ({ onSearch }:any) => {
+const GeoSearchComponent = () => {
   const [searchText, setSearchText] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const provider = new OpenStreetMapProvider();
@@ -34,7 +34,7 @@ const GeoSearchComponent = ({ onSearch }:any) => {
             {searchResults.map((item:any,index:number)=>(
                 <h2 key={index} className='p-3 hover:bg-gray-100
                 cursor-pointer'
-             >{item.label}</h2>
+             onClick={() =>{setSearchText(item.label); setSearchResults([])}}>{item.label}</h2>
             ))}
            </div>
       <button onClick={handleSearch}>Search</button>
