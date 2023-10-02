@@ -1,6 +1,5 @@
 "use client"
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useState, useEffect } from 'react';
 import { PiArrowsLeftRightBold } from 'react-icons/pi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 
@@ -11,6 +10,25 @@ interface Iprop {
 
 const AutocompleteAddress:React.FC<Iprop> = ({}) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [source, setSource] = useState<any>()
+  const [addressList, setAddressList] = useState<any>([])
+  useEffect(()=>{
+    const delayDebounceFn=  setTimeout(()=>{
+        getAddressList()
+    },1000)
+     //clears time for next iteration
+    return () => clearTimeout(delayDebounceFn)  
+  },[source])
+
+  const getAddressList =async () =>{
+    const res = await fetch ('/api/search-address?q='+source,{
+        headers:{
+            "Content-Type": "application/json"
+        }
+    });
+    const result=await res.json();
+    setAddressList(result)
+  }
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
@@ -18,8 +36,8 @@ const AutocompleteAddress:React.FC<Iprop> = ({}) => {
   };
 
 
-   //form 
-   const { handleSubmit } = useForm();
+
+
 
 
   return (
@@ -41,7 +59,9 @@ const AutocompleteAddress:React.FC<Iprop> = ({}) => {
               type="text"
               className='bg-transparent p-2 border-b border-gray-600 outline-none focus:border-[#2387FE]'
               name="addressFrom"
+              value={source}
               placeholder='address'
+              onChange={(e) => setSource(e.target.value)}
             />
             <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
               <HiOutlineLocationMarker />
@@ -53,6 +73,7 @@ const AutocompleteAddress:React.FC<Iprop> = ({}) => {
               type="text"
               className='bg-transparent p-2 border-b border-gray-600 outline-none focus:border-[#2387FE]'
               name="addressTo"
+              onChange={(e) => setSource(e.target.value)}
               placeholder='address'
             />
             <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
