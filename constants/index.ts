@@ -140,11 +140,13 @@ console.log(lat1, lon1, lat2, lon2)
     };
   }
   
-//   const distanceInKm = 50; // Replace with your calculated distance in kilometers
-//   const isHighway = true;  // Set to true for highway, false for urban road
+  export function calculateTripPrice(distanceInKilometers: number): number {
+    const ratePerKilometer = 2000; // Adjust the rate per kilometer as needed
   
-//   const travelTime = estimateCarTravelTime(distanceInKm, isHighway);
+    // Calculate the price based on the distance
+    const totalPrice = distanceInKilometers * ratePerKilometer;
   
-//   console.log(`Estimated travel time by car: ${travelTime.hours} hours, ${travelTime.minutes} minutes, ${travelTime.seconds} seconds`);
+    return totalPrice;
+  }
   
   

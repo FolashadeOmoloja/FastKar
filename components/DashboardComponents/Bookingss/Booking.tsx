@@ -74,7 +74,7 @@ const Booking = () => {
           >
                <DynamicMap position={markerPosition} secondPosition={secondMarkerPosition}/>
            </MapContainer>
-           <div className="absolute bottom-[2px] rounded-br-lg right-[2px] h-[40px] w-[350px] flex items-center bg-bluegradient  justify-center z-[1000] "><span className="">{distanceDisplay} Duration: {travelTime}</span></div>
+           <div className="distance-bar"><span className="">{distanceDisplay} Duration: {travelTime}</span></div>
         </section>
         
         

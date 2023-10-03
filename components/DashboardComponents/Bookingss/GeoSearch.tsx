@@ -59,9 +59,11 @@ const GeoSearchComponent:React.FC<Iprop> = ({propUseState}) => {
             if (propUseState) {
             propUseState(e.target.value);
           }}}
-        onKeyUp={(e) => {
+          onKeyUp={(e) => {
             if (e.key === 'Enter') {
-              handleSearch(); // Call search on Enter key press
+              setSearchResults([]); // Hide the suggestions
+            } else {
+              handleSearch(); // Call search for other keys
             }
           }}
           placeholder='address'

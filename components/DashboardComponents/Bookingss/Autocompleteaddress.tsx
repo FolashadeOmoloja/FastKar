@@ -39,22 +39,24 @@ const AutocompleteAddress:React.FC<Iprop> = ({ handleAddressSubmit, propUseState
         <div className='h-[105px] w-[10px] absolute top-[75px]'>
           <img src="/mapline.png" alt="" className='h-full w-full' />
         </div>
-        <form  onSubmit={handleSubmit(handleAddressSubmit)} className={`pr-5 pl-3  text-gray-700 text-sm flex flex-col ${isFlipped ? 'flip' : ''} ${isFlipped ? 'flex-col-reverse' : ''}`}>
-          <div className='relative flex flex-col mt-5'>
-            <label className='mb-5 '>FROM</label>
-             <GeoSearchComponent propUseState={propUseState}/>
-            <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
-              <HiOutlineLocationMarker />
-            </span>
-          </div>
-          <div className='relative flex flex-col mt-5'>
-            <label className='mb-5 '>TO</label>
-            <GeoSearchComponent propUseState={propSecondUseState}/>
-            <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
-              <HiOutlineLocationMarker />
-            </span>
-          </div>
-          <button type="submit" className='book-button mt-10'> Set Location </button>
+        <form  onSubmit={handleSubmit(handleAddressSubmit)} className={`pr-5 pl-3  text-gray-700 text-sm`}>
+          <section className={`flex flex-col ${isFlipped ? 'flip' : ''} ${isFlipped ? 'flex-col-reverse' : ''}`}>
+              <div className='relative flex flex-col mt-5'>
+                <label className='mb-5 '>FROM</label>
+                 <GeoSearchComponent propUseState={propUseState}/>
+                <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
+                  <HiOutlineLocationMarker />
+                </span>
+              </div>
+              <div className='relative flex flex-col mt-5'>
+                <label className='mb-5 '>TO</label>
+                <GeoSearchComponent propUseState={propSecondUseState}/>
+                <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
+                  <HiOutlineLocationMarker />
+                </span>
+              </div>
+          </section>
+          <button type="submit" className='book-button mt-10 w-full'> Set Location </button>
         </form>
       </section>
     </section>
