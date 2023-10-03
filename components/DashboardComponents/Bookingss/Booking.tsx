@@ -7,6 +7,7 @@ import { OpenStreetMapProvider} from 'leaflet-geosearch';
 import { calculateDistance, estimateCarTravelTime } from "@/constants";
 
 import dynamic from 'next/dynamic'
+import { MapContainer } from "react-leaflet";
 
 
 
@@ -65,8 +66,14 @@ const Booking = () => {
         <section className=' basis-[30%]'>
            <AutocompleteAddress  propUseState={setAddressFrom} propSecondUseState={setAddressTo} handleAddressSubmit={handleAddressSubmit}/>
         </section>
-
+        <MapContainer
+        center={secondMarkerPosition as any || [0, 0]}
+        zoom={13}
+        className='w-full md:h-full max-md:h-[70vh] rounded-lg border-2 border-[#2387FE]'
+        style={{ height: '70vh' }}
+      >
            <DynamicMap position={markerPosition} secondPosition={secondMarkerPosition}/>
+           </MapContainer>
         
         
 

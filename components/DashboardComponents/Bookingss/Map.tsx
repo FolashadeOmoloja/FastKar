@@ -21,11 +21,7 @@ const Map: React.FC<Iprop> = ({ position, secondPosition }) => {
 
   return (
     <section className='basis-[70%] h-[70vh]  rounded-lg'>
-      <MapContainer
-        center={secondPosition || [0, 0]}
-        zoom={13}
-        className='w-full md:h-full max-md:h-[70vh] rounded-lg border-2 border-[#2387FE]'
-      >
+
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         {position && (
           <Marker
@@ -61,7 +57,6 @@ const Map: React.FC<Iprop> = ({ position, secondPosition }) => {
             <Popup>Take a trip with FastKar</Popup>
           </Marker>
         )}
-      </MapContainer>
     </section>
   );
 };
