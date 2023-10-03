@@ -8,6 +8,7 @@ import { calculateDistance, estimateCarTravelTime } from "@/constants";
 
 import dynamic from 'next/dynamic'
 import { MapContainer } from "react-leaflet";
+import CarList from "./CarList";
 
 
 
@@ -61,9 +62,11 @@ const Booking = () => {
  
 
   return (
+    <section>
     <section className="flex max-md:flex-col-reverse max-md:gap-[50px]">
         <section className=' basis-[30%]'>
            <AutocompleteAddress  propUseState={setAddressFrom} propSecondUseState={setAddressTo} handleAddressSubmit={handleAddressSubmit}/>
+
         </section>
         <section className="relative basis-[70%] h-[70vh]  rounded-lg">
             <MapContainer
@@ -75,13 +78,10 @@ const Booking = () => {
                <DynamicMap position={markerPosition} secondPosition={secondMarkerPosition}/>
            </MapContainer>
            <div className="distance-bar"><span className="">{distanceDisplay} Duration: {travelTime}</span></div>
-        </section>
-        
-        
+        </section>        
 
-
-        
-
+    </section>
+    <CarList/>
     </section>
   )
 }
