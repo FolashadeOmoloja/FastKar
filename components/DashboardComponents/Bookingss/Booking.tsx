@@ -47,7 +47,6 @@ const Booking = () => {
     const resultsTo = await provider.search({ query: addressTo });
     console.log(addressFrom)
     if (resultsFrom.length > 0 && resultsTo.length > 0) {
-      // const positionFrom = resultsFrom[0].lat;
       const positionFrom = [resultsFrom[0].y, resultsFrom[0].x];
       const positionTo = [resultsTo[0].y, resultsTo[0].x];
       setMarkerPosition(positionFrom);
@@ -66,14 +65,17 @@ const Booking = () => {
         <section className=' basis-[30%]'>
            <AutocompleteAddress  propUseState={setAddressFrom} propSecondUseState={setAddressTo} handleAddressSubmit={handleAddressSubmit}/>
         </section>
-        <MapContainer
-        center={secondMarkerPosition as any || [0, 0]}
-        zoom={13}
-        className='w-full md:h-full max-md:h-[70vh] rounded-lg border-2 border-[#2387FE]'
-        style={{ height: '70vh' }}
-      >
-           <DynamicMap position={markerPosition} secondPosition={secondMarkerPosition}/>
+        <section className="relative basis-[70%] h-[70vh]  rounded-lg">
+            <MapContainer
+            center={secondMarkerPosition as any || [0, 0]}
+            zoom={13}
+            className='w-full md:h-full max-md:h-[70vh] rounded-lg border-2 border-[#2387FE]'
+            style={{ height: '70vh' }}
+          >
+               <DynamicMap position={markerPosition} secondPosition={secondMarkerPosition}/>
            </MapContainer>
+           <div className="absolute bottom-[2px] rounded-br-lg right-[2px] h-[40px] w-[350px] flex items-center bg-bluegradient  justify-center z-[1000] "><span className="">{distanceDisplay} Duration: {travelTime}</span></div>
+        </section>
         
         
 

@@ -20,7 +20,7 @@ const Map: React.FC<Iprop> = ({ position, secondPosition }) => {
   }, [secondPosition, map]);
 
   return (
-    <section className='basis-[70%] h-[70vh]  rounded-lg'>
+    <section className=''>
 
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         {position && (
