@@ -1,4 +1,4 @@
-"use client"
+
 import React, { useState, useEffect } from 'react';
 // Import the library
 // @ts-ignore
