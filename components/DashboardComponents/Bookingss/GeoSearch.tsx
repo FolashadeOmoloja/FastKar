@@ -53,7 +53,7 @@ const GeoSearchComponent:React.FC<Iprop> = ({propUseState}) => {
     <div>
       <input
         type="text"
-        className='bg-transparent p-2 border-b border-gray-600 outline-none focus:border-[#2387FE]'
+        className='bg-transparent w-full p-2 border-b border-gray-600 outline-none focus:border-[#2387FE] relative'
         value={searchText}
         onChange={(e) => {setSearchText(e.target.value); 
             if (propUseState) {
@@ -67,7 +67,7 @@ const GeoSearchComponent:React.FC<Iprop> = ({propUseState}) => {
           placeholder='address'
       />
   {searchResults.length > 0 ? ( // Check if searchResults is not empty
-    <div className='options-div shadow-md p-1 rounded-md w-full bg-white z-20 overflow-y-scroll'>
+    <div className='absolute top-[60px] shadow-md p-1 rounded-md w-full bg-white z-20 h-[200px] overflow-y-scroll'>
       {searchResults.map((item:any, index:number)=>(
         <h2
           key={index}

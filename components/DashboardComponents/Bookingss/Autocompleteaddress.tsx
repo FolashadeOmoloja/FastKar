@@ -8,14 +8,13 @@ import GeoSearchComponent from './GeoSearch';
 
 
 interface Iprop {
-    handleAddressChange?: (value: any) => any;
-    addressFrom?: any;
-    addressTo?: any;
+
     handleAddressSubmit: () => Promise<void>;
     propUseState?: (value: string) => void; 
+    propSecondUseState?: (value: string) => void; 
   }
 
-const AutocompleteAddress:React.FC<Iprop> = ({addressFrom, addressTo, handleAddressChange, handleAddressSubmit, propUseState}) => {
+const AutocompleteAddress:React.FC<Iprop> = ({ handleAddressSubmit, propUseState, propSecondUseState}) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleFlip = () => {
@@ -43,14 +42,6 @@ const AutocompleteAddress:React.FC<Iprop> = ({addressFrom, addressTo, handleAddr
         <form  onSubmit={handleSubmit(handleAddressSubmit)} className={`pr-5 pl-3  text-gray-700 text-sm flex flex-col ${isFlipped ? 'flip' : ''} ${isFlipped ? 'flex-col-reverse' : ''}`}>
           <div className='relative flex flex-col mt-5'>
             <label className='mb-5 '>FROM</label>
-            {/* <input
-              type="text"
-              className='bg-transparent p-2 border-b border-gray-600 outline-none focus:border-[#2387FE]'
-              name="addressFrom"
-              value={addressFrom}
-              onChange={handleAddressChange}
-              placeholder='address'
-            /> */}
              <GeoSearchComponent propUseState={propUseState}/>
             <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
               <HiOutlineLocationMarker />
@@ -58,14 +49,7 @@ const AutocompleteAddress:React.FC<Iprop> = ({addressFrom, addressTo, handleAddr
           </div>
           <div className='relative flex flex-col mt-5'>
             <label className='mb-5 '>TO</label>
-            <input
-              type="text"
-              className='bg-transparent p-2 border-b border-gray-600 outline-none focus:border-[#2387FE]'
-              name="addressTo"
-              value={addressTo}
-              onChange={handleAddressChange}
-              placeholder='address'
-            />
+            <GeoSearchComponent propUseState={propSecondUseState}/>
             <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
               <HiOutlineLocationMarker />
             </span>

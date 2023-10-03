@@ -65,7 +65,7 @@ const Booking = () => {
   return (
     <section className="flex max-md:flex-col-reverse max-md:gap-[50px]">
         <section className=' basis-[30%]'>
-           <AutocompleteAddress handleAddressChange={handleAddressChange} propUseState={setAddressFrom} addressFrom={addressFrom} addressTo={addressTo} handleAddressSubmit={handleAddressSubmit}/>
+           <AutocompleteAddress  propUseState={setAddressFrom} propSecondUseState={setAddressTo} handleAddressSubmit={handleAddressSubmit}/>
         </section>
         <MapContainer
       center={secondMarkerPosition as any}
