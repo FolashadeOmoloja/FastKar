@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { PiArrowsLeftRightBold } from 'react-icons/pi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
+import GeoSearchComponent from './GeoSearch';
 
 
 
@@ -11,9 +12,10 @@ interface Iprop {
     addressFrom?: any;
     addressTo?: any;
     handleAddressSubmit: () => Promise<void>;
+    propUseState?: (value: string) => void; 
   }
 
-const AutocompleteAddress:React.FC<Iprop> = ({addressFrom, addressTo, handleAddressChange, handleAddressSubmit}) => {
+const AutocompleteAddress:React.FC<Iprop> = ({addressFrom, addressTo, handleAddressChange, handleAddressSubmit, propUseState}) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleFlip = () => {
@@ -41,14 +43,15 @@ const AutocompleteAddress:React.FC<Iprop> = ({addressFrom, addressTo, handleAddr
         <form  onSubmit={handleSubmit(handleAddressSubmit)} className={`pr-5 pl-3  text-gray-700 text-sm flex flex-col ${isFlipped ? 'flip' : ''} ${isFlipped ? 'flex-col-reverse' : ''}`}>
           <div className='relative flex flex-col mt-5'>
             <label className='mb-5 '>FROM</label>
-            <input
+            {/* <input
               type="text"
               className='bg-transparent p-2 border-b border-gray-600 outline-none focus:border-[#2387FE]'
               name="addressFrom"
               value={addressFrom}
               onChange={handleAddressChange}
               placeholder='address'
-            />
+            /> */}
+             <GeoSearchComponent propUseState={propUseState}/>
             <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
               <HiOutlineLocationMarker />
             </span>

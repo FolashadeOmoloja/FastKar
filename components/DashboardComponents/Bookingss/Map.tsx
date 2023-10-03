@@ -38,7 +38,7 @@ const Map: React.FC<Iprop> = ({ position, secondPosition }) => {
   // searchControl.addTo(map);
 
   return (
-    <section className='basis-[70%] h-[70vh] border-2 border-[#2387FE] rounded-lg'>
+    <section className='basis-[70%] h-[70vh]  rounded-lg'>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker
         icon={

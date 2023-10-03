@@ -27,7 +27,7 @@ const Booking = () => {
   const [addressTo, setAddressTo] = useState('');
   const [markerPosition, setMarkerPosition] = useState([6.4422871, 3.4874378]);
   const [secondMarkerPosition, setSeconderMarkerPosition] = useState([6.4422871, 3.4874378]);
-  
+ 
   const handleAddressChange = (e:any) => {
     const { name, value } = e.target;
     if (name === 'addressFrom') {
@@ -45,6 +45,7 @@ const Booking = () => {
     const provider = new OpenStreetMapProvider();
     const resultsFrom = await provider.search({ query: addressFrom });
     const resultsTo = await provider.search({ query: addressTo });
+    console.log(addressFrom)
     if (resultsFrom.length > 0 && resultsTo.length > 0) {
       // const positionFrom = resultsFrom[0].lat;
       const positionFrom = [resultsFrom[0].y, resultsFrom[0].x];
@@ -53,30 +54,23 @@ const Booking = () => {
             console.log('hi')
       setMarkerPosition(positionFrom);
       setSeconderMarkerPosition(positionTo)
-      console.log(secondMarkerPosition)
+      console.log(markerPosition)
       // Perform any other necessary actions with the geocoded positions
     }
   };
 
 
-  
-
-  // const handleSearch = (results:any) => {
-  //   setSearchResults(results);
-  //   console.log(searchResults)
-
-  // };
+ 
 
   return (
     <section className="flex max-md:flex-col-reverse max-md:gap-[50px]">
         <section className=' basis-[30%]'>
-           <AutocompleteAddress handleAddressChange={handleAddressChange} addressFrom={addressFrom} addressTo={addressTo} handleAddressSubmit={handleAddressSubmit}/>
-                       <GeoSearchComponent  />
+           <AutocompleteAddress handleAddressChange={handleAddressChange} propUseState={setAddressFrom} addressFrom={addressFrom} addressTo={addressTo} handleAddressSubmit={handleAddressSubmit}/>
         </section>
         <MapContainer
       center={secondMarkerPosition as any}
       zoom={13}
-      className='w-full md:h-full max-md:h-[70vh] rounded-lg'
+      className='w-full md:h-full max-md:h-[70vh] rounded-lg border-2 border-[#2387FE]'
     >
            <DynamicMap position={markerPosition} secondPosition={secondMarkerPosition}/>
         
