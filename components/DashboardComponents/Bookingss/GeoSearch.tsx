@@ -67,7 +67,7 @@ const GeoSearchComponent:React.FC<Iprop> = ({propUseState}) => {
           placeholder='address'
       />
   {searchResults.length > 0 ? ( // Check if searchResults is not empty
-    <div className='absolute top-[60px] shadow-md p-1 rounded-md w-full bg-white z-20 h-[200px] overflow-y-scroll'>
+    <div className='absolute top-[70px] shadow-md p-1 rounded-md w-full bg-white z-20 h-[200px] overflow-y-scroll'>
       {searchResults.map((item:any, index:number)=>(
         <h2
           key={index}
