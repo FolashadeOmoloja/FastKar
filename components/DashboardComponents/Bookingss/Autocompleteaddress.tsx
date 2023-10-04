@@ -42,14 +42,14 @@ const AutocompleteAddress:React.FC<Iprop> = ({ handleAddressSubmit, propUseState
         <form  onSubmit={handleSubmit(handleAddressSubmit)} className={`pr-5 pl-3  text-gray-700 text-sm`}>
           <section className={`flex flex-col ${isFlipped ? 'flip' : ''} ${isFlipped ? 'flex-col-reverse' : ''}`}>
               <div className='relative flex flex-col mt-5'>
-                <label className='mb-5 '>FROM</label>
+                <label className='mb-5 '>PICK UP</label>
                  <GeoSearchComponent propUseState={propUseState}/>
                 <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
                   <HiOutlineLocationMarker />
                 </span>
               </div>
               <div className='relative flex flex-col mt-5'>
-                <label className='mb-5 '>TO</label>
+                <label className='mb-5 '>DROP OFF</label>
                 <GeoSearchComponent propUseState={propSecondUseState}/>
                 <span className='absolute right-0 top-[45px] text-[#2387FE] text-[20px] '>
                   <HiOutlineLocationMarker />
