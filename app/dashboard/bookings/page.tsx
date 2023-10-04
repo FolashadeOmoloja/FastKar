@@ -1,3 +1,4 @@
+"use client"
 import Booking from "@/components/DashboardComponents/Bookingss/Booking"
 import { useState } from "react"
 

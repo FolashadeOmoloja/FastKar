@@ -1,24 +1,51 @@
 import { useState,  } from "react"
 import { vehicles, calculateTripPrice } from "@/constants"
 import {BsStarFill, BsStarHalf, BsStar} from 'react-icons/bs'
+import {MdWarning} from 'react-icons/md'
 import { useRouter } from "next/navigation"
 
 
 interface Iprop {
  travelDistance?: any
+ drop?: string
+ pick?: string
+ duration?:string
+ distance?:string
  
 }
 
 
-const CarList:React.FC<Iprop> = ({travelDistance}) => {
+const CarList:React.FC<Iprop> = ({travelDistance, drop, pick,duration, distance}) => {
     const [changeBg, setChangeBg] = useState(-1);
     const [tripPrice, setTripPrice]= useState('')
+    const [price, setPrice] = useState(0)
+    const [warning,setWarning] = useState('hidden')
     const router:any = useRouter()
     const handleItemClick = (index: number, basePrice:number) => {
         setChangeBg(index);
         const distance = calculateTripPrice(travelDistance, basePrice)
          setTripPrice(distance.totalPriceDisplay)
+         setPrice(distance.totalPrice)
       };
+
+      const collectDataButtonClick = () =>{
+        if(price > 0){
+          const tripData = {
+            drop: drop,
+            pick: pick,
+            duration: duration,
+            distance: distance,
+            price: price.toFixed(2)
+          }
+  
+          console.log(tripData)
+        }
+        else{
+          setWarning('block')
+          console.log('complete your booking')
+        }
+
+      }
   return (
     <section className="mt-10">
         <div>
@@ -58,9 +85,12 @@ const CarList:React.FC<Iprop> = ({travelDistance}) => {
         </section>
         <div className="flex mt-5 justify-center w-full">
         <button className="book-button min-w-[200px] max-xsm:w-full"
-        onClick={() => router.push('/dashboard/payment')}
+        onClick={() => collectDataButtonClick()}
         >Confirm Order <span>&#8358;{tripPrice}</span> </button>
         </div>
+        <p className={`text-red-500 mt-3 w-full `}>
+          <span className="text-yellow-500"><MdWarning/></span> Complete your booking to proceed*
+        </p>
 
     </section>
   )

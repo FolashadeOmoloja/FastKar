@@ -1,4 +1,3 @@
-"use client"
 import { useState,useEffect } from "react";
 import AutocompleteAddress from "./Autocompleteaddress"
 // Import the library
@@ -80,7 +79,7 @@ const Booking = () => {
         </section>        
 
     </section>
-    <CarList travelDistance={distance}/>
+    <CarList travelDistance={distance} drop={addressTo} pick={addressFrom} duration={travelTime} distance={distanceDisplay}/>
     </section>
   )
 }
