@@ -1,6 +1,7 @@
 import { useState,  } from "react"
 import { vehicles, calculateTripPrice } from "@/constants"
 import {BsStarFill, BsStarHalf, BsStar} from 'react-icons/bs'
+import { useRouter } from "next/navigation"
 
 
 interface Iprop {
@@ -12,6 +13,7 @@ interface Iprop {
 const CarList:React.FC<Iprop> = ({travelDistance}) => {
     const [changeBg, setChangeBg] = useState(-1);
     const [tripPrice, setTripPrice]= useState('')
+    const router:any = useRouter()
     const handleItemClick = (index: number, basePrice:number) => {
         setChangeBg(index);
         const distance = calculateTripPrice(travelDistance, basePrice)
@@ -55,7 +57,9 @@ const CarList:React.FC<Iprop> = ({travelDistance}) => {
                }
         </section>
         <div className="flex mt-5 justify-center w-full">
-        <button className="book-button min-w-[200px] max-xsm:w-full">Confirm Order <span>&#8358;{tripPrice}</span> </button>
+        <button className="book-button min-w-[200px] max-xsm:w-full"
+        onClick={() => router.push('/dashboard/payment')}
+        >Confirm Order <span>&#8358;{tripPrice}</span> </button>
         </div>
 
     </section>
