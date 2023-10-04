@@ -12,7 +12,7 @@ const MobileSidebar = () => {
   };
 
   return (
-    <nav className="flex fixed z-40 right-[20px] top-[40px] md:hidden">
+    <nav className="flex fixed z-40 right-[20px] top-[40px] slg:hidden">
       {isOpen && (
         <div className="fixed inset-0 z-40 bg-black opacity-30" onClick={toggleSidebar}></div>
       )}

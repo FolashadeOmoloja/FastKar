@@ -19,6 +19,19 @@ const Map: React.FC<Iprop> = ({ position, secondPosition }) => {
     }
   }, [secondPosition, map]);
 
+    // Define coordinates for the two markers
+    const marker1Coords = position;
+    const marker2Coords = secondPosition;
+  
+    // Create a polyline based on the marker coordinates
+    const polylineCoords = [marker1Coords, marker2Coords];
+  
+    // Create a polyline with the coordinates
+    const polyline = L.polyline(polylineCoords, { color: '#2387FE' });
+  
+    // Add the polyline to the map
+    polyline.addTo(map);
+
   return (
     <section className=''>
 

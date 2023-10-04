@@ -14,7 +14,8 @@ export const vehicles = [
         image: '/motor.png',
         star: 4.5,
         reviews:'289 Reviews',
-        description: 'Efficient motorcycle rides: Affordable way to navigate traffic'
+        description: 'Efficient motorcycle rides: Affordable way to navigate traffic',
+        basePrice: 1
     },
 
     {
@@ -22,35 +23,40 @@ export const vehicles = [
         image: '/tricycle.png',
         star: 3.5,
         reviews:'289 Reviews',
-        description: 'Efficient keke napep rides: Affordable way to navigate traffic'
+        description: 'Efficient keke napep rides: Affordable way to navigate traffic',
+        basePrice: 1.3
     },
     {
         type: 'Economy Compact',
         image: '/economy.png',
         star: 4,
         reviews:'799 Reviews',
-        description: 'Compact car rides: Affordable way to outsmart heavy traffic.'
+        description: 'Compact car rides: Affordable way to outsmart heavy traffic.',
+        basePrice: 2.2
     },
     {
         type: 'Luxury Ride',
         image: '/luxury.png',
         star: 4.5,
         reviews:'197 Reviews',
-        description: 'Experience elegance and finesse as you travel in luxury'
+        description: 'Experience elegance and finesse as you travel in luxury',
+        basePrice: 2.8
     },
     {
         type: 'Prestige Ride',
         image: '/premuim.png',
         star: 5,
         reviews:'125 Reviews',
-        description: 'Indulge in excellence with our premium car travel in this package.'
+        description: 'Indulge in excellence with our premium car travel in this package.',
+        basePrice: 3.7
     },
     {
         type: 'Group Ride',
         image: '/groupbus.png',
         star: 4.8,
         reviews:'950 Reviews',
-        description: 'Secure group travels with our reliable and spacious bus package.'
+        description: 'Secure group travels with our reliable and spacious bus package.',
+        basePrice: 4.5
     },
 
 ]
@@ -92,7 +98,7 @@ export function calculateDistance(addressFrom: [number,number], addressTo: [numb
     let lon1 = addressFrom[1]
     let lat2 = addressTo[0]
     let lon2 = addressTo[1]
-console.log(lat1, lon1, lat2, lon2)
+
 
     const R = 6371; // Radius of the Earth in kilometers
     const dLat = (lat2 - lat1) * (Math.PI / 180); // Convert latitude difference to radians
@@ -140,13 +146,15 @@ console.log(lat1, lon1, lat2, lon2)
     };
   }
   
-  export function calculateTripPrice(distanceInKilometers: number): number {
-    const ratePerKilometer = 2000; // Adjust the rate per kilometer as needed
+  export function calculateTripPrice(distanceInKilometers: number, basePrice: number) {
+    const ratePerKilometer = 200; // Adjust the rate per kilometer as needed
   
     // Calculate the price based on the distance
-    const totalPrice = distanceInKilometers * ratePerKilometer;
+    const totalPrice = basePrice * distanceInKilometers * ratePerKilometer;
+    const totalPriceDisplay = `${totalPrice.toFixed(2)}`
+    
   
-    return totalPrice;
+    return {totalPrice, totalPriceDisplay};
   }
   
   

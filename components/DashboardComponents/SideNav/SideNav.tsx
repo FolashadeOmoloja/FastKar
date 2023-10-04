@@ -11,7 +11,7 @@ export const SideNav = () => {
   };
 
   return (
-    <nav className="fixed top-[100px] left-0 bottom-0  bg-color w-[270px] shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] flex flex-col items-center py-8 border-r-2 border-[rgba(0,_0,_0,_0.24)] max-md:hidden">
+    <nav className="fixed top-[100px] left-0 bottom-0  bg-color w-[270px] shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] flex flex-col items-center py-8 border-r-2 border-[rgba(0,_0,_0,_0.24)] max-slg:hidden">
       <ul>
         {NavItem.map((item, index) => (
           <Link href={item.href} key={index}>

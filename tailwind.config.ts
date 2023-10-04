@@ -23,7 +23,8 @@ const config: Config = {
           'right-center': 'right center'
       },
       screens: {
-        'xsm': '375px'
+        'xsm': '375px',
+        'slg': '870px'
       },
 
     },

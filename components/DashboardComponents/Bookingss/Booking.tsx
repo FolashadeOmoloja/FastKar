@@ -13,7 +13,7 @@ import CarList from "./CarList";
 
 
 
-const DynamicMap = dynamic(() => import('../Bookingss/Map'), {
+const DynamicMap = dynamic(() => import('./Map'), {
   ssr: false
 });
 
@@ -41,18 +41,17 @@ const Booking = () => {
    
   }, [markerPosition, secondMarkerPosition]);
  
-  console.log(distance, distanceDisplay, travelTime)
+ 
   const handleAddressSubmit = async () => {
     const provider = new OpenStreetMapProvider();
     const resultsFrom = await provider.search({ query: addressFrom });
     const resultsTo = await provider.search({ query: addressTo });
-    console.log(addressFrom)
+
     if (resultsFrom.length > 0 && resultsTo.length > 0) {
       const positionFrom = [resultsFrom[0].y, resultsFrom[0].x];
       const positionTo = [resultsTo[0].y, resultsTo[0].x];
       setMarkerPosition(positionFrom);
       setSeconderMarkerPosition(positionTo)
-      console.log(markerPosition)
       // Perform any other necessary actions with the geocoded positions
 
     }
@@ -81,7 +80,7 @@ const Booking = () => {
         </section>        
 
     </section>
-    <CarList/>
+    <CarList travelDistance={distance}/>
     </section>
   )
 }
