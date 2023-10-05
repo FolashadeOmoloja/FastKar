@@ -7,7 +7,7 @@ import { useState } from "react"
 
 const Bookings = () => {
   const [tripDetailObject, setTripdetailObject] = useState({})
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   return (
         <section >
             {
