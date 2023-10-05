@@ -21,7 +21,7 @@ const TripDetails:React.FC<Iprop> = ({tripDetailObject}) => {
        <span className='font-semibold text-[20px]'>Booking Details</span>
       </div>
       <form action="" className='px-[20px]'>
-         <div className='flex justify-between'>
+         <div className='flex formdivs gap-[10px]'>
              <div>
                   <label>Full Name</label>
                   <input type="text" placeholder='Enter your full Name'/>
@@ -31,7 +31,7 @@ const TripDetails:React.FC<Iprop> = ({tripDetailObject}) => {
                   <input type='tel' placeholder='Enter your Mobile No.'/>
               </div>
          </div>
-         <div className='flex justify-between'>
+         <div className='flex formdivs gap-[10px]'>
              <div>
                   <label>Email</label>
                   <input type="email" placeholder='Enter your full Name'/>
@@ -43,7 +43,7 @@ const TripDetails:React.FC<Iprop> = ({tripDetailObject}) => {
                   <p className='text-sm'>If your Booking is related to Airport pickup</p>
               </div>
          </div>
-         <div className='flex justify-between'>
+         <div className='flex formdivs gap-[10px]'>
              <div>
                   <label>Pickup Date:</label>
                   <input type="date" placeholder='Enter your full Name'/>
@@ -53,7 +53,7 @@ const TripDetails:React.FC<Iprop> = ({tripDetailObject}) => {
                   <input type='time' placeholder='Flight Details'/>
               </div>
          </div>
-         <div className='flex justify-between'>
+         <div className='flex formdivs gap-[10px]'>
              <div>
                   <label>Pickup Address:</label>
                   <input type="text" 
