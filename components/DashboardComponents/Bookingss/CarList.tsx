@@ -39,6 +39,7 @@ const CarList:React.FC<Iprop> = ({travelDistance, drop, pick,duration, distance}
           }
   
           console.log(tripData)
+          setWarning('hidden')
         }
         else{
           setWarning('block')
@@ -88,8 +89,8 @@ const CarList:React.FC<Iprop> = ({travelDistance, drop, pick,duration, distance}
         onClick={() => collectDataButtonClick()}
         >Confirm Order <span>&#8358;{tripPrice}</span> </button>
         </div>
-        <p className={`text-red-500 mt-3 w-full `}>
-          <span className="text-yellow-500"><MdWarning/></span> Complete your booking to proceed*
+        <p className={`text-red-600 mt-3 w-full flex items-center justify-center ${warning}  `}>
+          <span className="text-yellow-500 mr-1 text-lg"><MdWarning/></span> Complete your booking to proceed*
         </p>
 
     </section>
