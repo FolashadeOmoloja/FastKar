@@ -53,8 +53,10 @@
   @apply flex flex-col
 }
 
-.formdivs input{
-  @apply rounded-sm border border-gray-700 w-[300px] px-[6px] py-[12]
+.formdivs label{ @apply text-sm}
+
+.formdivs input, .formdivs textarea{
+  @apply rounded-lg border border-[#ced4da] w-[300px] px-[6px] py-[12px]
 }
 }
 
