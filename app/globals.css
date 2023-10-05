@@ -48,6 +48,14 @@
 .distance-bar{
   @apply absolute bottom-[2px] rounded-br-lg right-[2px] h-[40px] w-[350px] flex items-center bg-bluegradient  justify-center z-[1000] font-semibold text-white max-sm:w-[200px] max-sm:text-sm max-sm:p-2
 }
+
+.formdivs div{
+  @apply flex flex-col
+}
+
+.formdivs input{
+  @apply rounded-sm border border-gray-700 w-[300px] px-[6px] py-[12]
+}
 }
 
 

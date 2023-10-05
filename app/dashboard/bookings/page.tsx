@@ -6,14 +6,29 @@ import { useState } from "react"
 
 
 const Bookings = () => {
-  const [tripDetailObject, setTripdetailObject] = useState({})
+  const [tripDetailObject, setTripdetailObject] = useState({
+    pick: '',
+    drop:'',
+    duration: '',
+    distance: '',
+    price: 0,
+    vehicleType: ''
+  })
   const [show, setShow] = useState(false)
   return (
         <section >
             {
               show? 
               <Booking propSecondUseState={setShow} propUseState={setTripdetailObject}/>
-              : <TripDetails tripDetailObject={tripDetailObject}/>
+              : <TripDetails tripDetailObject={tripDetailObject as {
+                pick:'',
+                drop:'',
+                duration: '',
+                distance: '',
+                price: 0,
+                vehicleType: ''
+                
+              } }/>
 
             }
       

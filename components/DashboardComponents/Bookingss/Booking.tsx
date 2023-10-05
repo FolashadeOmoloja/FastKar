@@ -17,7 +17,14 @@ const DynamicMap = dynamic(() => import('./Map'), {
 });
 
 interface Iprop {
-  propUseState?: (value: {}) => void; 
+  propUseState?: (value: {
+    pick:'',
+    drop:'',
+    duration: '',
+    distance: '',
+    price: 0,
+    vehicleType: ''
+  }) => void; 
   propSecondUseState?: (value: boolean) => void; 
 }
 const Booking:React.FC<Iprop> = ({propUseState, propSecondUseState}) => {

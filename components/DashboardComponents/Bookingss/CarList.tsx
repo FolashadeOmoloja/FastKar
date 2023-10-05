@@ -8,7 +8,14 @@ interface Iprop {
  pick?: string
  duration?:string
  distance?:string
- propUseState?: (value: {}) => void; 
+ propUseState?: (value: {
+    pick:'',
+    drop:'',
+    duration: '',
+    distance: '',
+    price: 0,
+    vehicleType: ''
+  }) => void; 
  propSecondUseState?: (value: boolean) => void; 
  
 }
@@ -31,12 +38,12 @@ const CarList:React.FC<Iprop> = ({travelDistance, drop, pick,duration, distance,
       const collectDataButtonClick = () =>{
         if(price > 0){
           const tripData = {
-            drop: drop,
-            pick: pick,
-            duration: duration,
-            distance: distance,
-            price: price.toFixed(2),
-            vehicleType: vehicleName
+            drop: drop as '',
+            pick: pick as '',
+            duration: duration as '',
+            distance: distance as '',
+            price: price.toFixed(2) as unknown as 0,
+            vehicleType: vehicleName as ''
           }
           
          if(propUseState){
