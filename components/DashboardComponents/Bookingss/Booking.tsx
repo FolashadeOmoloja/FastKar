@@ -16,8 +16,11 @@ const DynamicMap = dynamic(() => import('./Map'), {
   ssr: false
 });
 
-
-const Booking = () => {
+interface Iprop {
+  propUseState?: (value: {}) => void; 
+  propSecondUseState?: (value: boolean) => void; 
+}
+const Booking:React.FC<Iprop> = ({propUseState, propSecondUseState}) => {
   const [addressFrom, setAddressFrom] = useState('');
   const [addressTo, setAddressTo] = useState('');
   const [markerPosition, setMarkerPosition] = useState([6.4422871, 3.4874378]);
@@ -79,7 +82,7 @@ const Booking = () => {
         </section>        
 
     </section>
-    <CarList travelDistance={distance} drop={addressTo} pick={addressFrom} duration={travelTime} distance={distanceDisplay}/>
+    <CarList travelDistance={distance} drop={addressTo} pick={addressFrom} duration={travelTime} distance={distanceDisplay} propSecondUseState={propSecondUseState} propUseState={propUseState}/>
     </section>
   )
 }

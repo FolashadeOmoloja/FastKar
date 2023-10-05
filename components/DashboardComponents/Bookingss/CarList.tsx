@@ -2,27 +2,27 @@ import { useState,  } from "react"
 import { vehicles, calculateTripPrice } from "@/constants"
 import {BsStarFill, BsStarHalf, BsStar} from 'react-icons/bs'
 import {MdWarning} from 'react-icons/md'
-import { useRouter } from "next/navigation"
-
-
 interface Iprop {
  travelDistance?: any
  drop?: string
  pick?: string
  duration?:string
  distance?:string
+ propUseState?: (value: {}) => void; 
+ propSecondUseState?: (value: boolean) => void; 
  
 }
 
 
-const CarList:React.FC<Iprop> = ({travelDistance, drop, pick,duration, distance}) => {
+const CarList:React.FC<Iprop> = ({travelDistance, drop, pick,duration, distance, propUseState, propSecondUseState}) => {
     const [changeBg, setChangeBg] = useState(-1);
     const [tripPrice, setTripPrice]= useState('')
+    const [vehicleName, setVehicleName] = useState('')
     const [price, setPrice] = useState(0)
     const [warning,setWarning] = useState('hidden')
-    const router:any = useRouter()
-    const handleItemClick = (index: number, basePrice:number) => {
+    const handleItemClick = (index: number, basePrice:number, vehName: string) => {
         setChangeBg(index);
+        setVehicleName(vehName)
         const distance = calculateTripPrice(travelDistance, basePrice)
          setTripPrice(distance.totalPriceDisplay)
          setPrice(distance.totalPrice)
@@ -35,15 +35,21 @@ const CarList:React.FC<Iprop> = ({travelDistance, drop, pick,duration, distance}
             pick: pick,
             duration: duration,
             distance: distance,
-            price: price.toFixed(2)
+            price: price.toFixed(2),
+            vehicleType: vehicleName
           }
-  
-          console.log(tripData)
+          
+         if(propUseState){
+          propUseState(tripData)
+         }
+         if(propSecondUseState){
+          propSecondUseState(false)
+         }
+        
           setWarning('hidden')
         }
         else{
           setWarning('block')
-          console.log('complete your booking')
         }
 
       }
@@ -71,7 +77,7 @@ const CarList:React.FC<Iprop> = ({travelDistance, drop, pick,duration, distance}
                     }
                     return (
                         <div key={index} className={`rounded-lg h-[200px] w-[200px] bg-white flex flex-col justify-between items-center min-w-[152px] cursor-pointer ${index === changeBg?'bg-bluegradient text-white': ''}`}  
-                        onClick={() => handleItemClick(index, veh.basePrice)}
+                        onClick={() => handleItemClick(index, veh.basePrice, veh.type)}
                         >
                             <span className="text-sm mt-2">{veh.type}</span>
                             <div className={`flex  ${index === changeBg?'hidden': ''}`}>{stars}</div>
