@@ -14,13 +14,17 @@ interface Iprop {
 
 const TripDetailsForm:React.FC<Iprop> = ({tripDetailObject}) => {
 
-    console.log(tripDetailObject)
+    const { handleSubmit } = useForm();
+
+    const handleSubmitForm = () =>{
+        
+    }
   return (
    <section className='shadow-[0_3px_10px_rgb(0,0,0,0.2)]  bg-white basis-[65%] h-[635px]'>
       <div className='bg-[#AED6EF] h-[50px] px-[20px] flex items-center'>
        <span className='font-semibold text-[20px]'>Booking Details</span>
       </div>
-      <form action="" className='p-[20px]'>
+      <form onSubmit={handleSubmit(handleSubmitForm)} className='p-[20px]'>
          <div className='flex formdivs max-sm:flex-col mb-[20px] gap-[20px]'>
              <div className='basis-1/2'>
                   <label>Full Name</label>

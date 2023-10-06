@@ -1,6 +1,7 @@
 "use client"
 import Booking from "@/components/DashboardComponents/Bookingss/Booking"
 import TripDetails from "@/components/DashboardComponents/Bookingss/TripDetails/TripDetails"
+import TripConfirmed from "@/components/DashboardComponents/Bookingss/TripConfirmed/TripConfirmed"
 import { useState } from "react"
 
 
@@ -16,12 +17,14 @@ const Bookings = () => {
     vehImg: ''
   })
   const [show, setShow] = useState(false)
+  const [secondShow, setSecondShow] = useState(true)
   return (
         <section >
             {
               show? 
               <Booking propSecondUseState={setShow} propUseState={setTripdetailObject}/>
-              : <TripDetails tripDetailObject={tripDetailObject as {
+              : secondShow?
+              <TripDetails tripDetailObject={tripDetailObject as {
                 pick:'',
                 drop:'',
                 duration: '',
@@ -30,7 +33,8 @@ const Bookings = () => {
                 vehicleType: '',
                 vehImg: ''
                 
-              } } propUseState={setShow}/>
+              } } propUseState={setShow}
+              />: <TripConfirmed/>
 
             }
       
