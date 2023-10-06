@@ -160,27 +160,25 @@ export function calculateDistance(addressFrom: [number,number], addressTo: [numb
 
 
 
-export function generateUniqueId(): string {
-    let counter = 1;
-    let letterIndex = 0;
-  const prefix = 'FK';
-  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  const currentLetter = letters.charAt(letterIndex);
-
-  const id = counter.toString().padStart(5, '0'); // Pad the counter with leading zeros
-  counter++;
-
-  if (counter > 99999) {
-    // Reset counter and move to the next letter when it reaches 100000
-    counter = 1;
-    letterIndex = (letterIndex + 1) % letters.length;
+  export function generateUniqueId(): string {
+    const prefix = 'FK';
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    const idLength = 5; // Length of the numeric part of the ID
+    const letterIndex = Math.floor(Math.random() * letters.length); // Random letter index
+  
+    let numericPart = '';
+    for (let i = 0; i < idLength; i++) {
+      numericPart += numbers.charAt(Math.floor(Math.random() * numbers.length)); // Random number
+    }
+  
+    const currentLetter = letters.charAt(letterIndex);
+    const uniqueId = `${prefix}${numericPart}${currentLetter}`;
+  
+    return uniqueId;
   }
+  
 
-  return `${prefix}${id}${currentLetter}`;
-}
 
-// Example usage:
-const uniqueId = generateUniqueId();
-console.log(uniqueId); // Output: OWC00001A
 
   
