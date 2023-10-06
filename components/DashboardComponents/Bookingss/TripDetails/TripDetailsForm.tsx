@@ -60,7 +60,7 @@ const TripDetailsForm: React.FC<Iprop> = ({
   };
 
   return (
-    <section className='shadow-[0_3px_10px_rgb(0,0,0,0.2)]  bg-white basis-[65%] h-[635px]'>
+    <section className='shadow-[0_3px_10px_rgb(0,0,0,0.2)]  bg-white basis-[65%] h-[680px]'>
       <div className='bg-[#AED6EF] h-[50px] px-[20px] flex items-center'>
         <span className='font-semibold text-[20px]'>Booking Details</span>
       </div>
@@ -75,7 +75,7 @@ const TripDetailsForm: React.FC<Iprop> = ({
               {...register('fullName', { required: validationRules.fullName.required })}
             />
             {errors.fullName && (
-              <span className='text-red-500'>{`${errors.fullName.message}`}</span>
+              <span className='text-red-500 text-sm'>{`${errors.fullName.message}`}</span>
             )}
           </div>
           {/* Mobile No. */}
@@ -87,7 +87,7 @@ const TripDetailsForm: React.FC<Iprop> = ({
               {...register('mobileNo', { required: validationRules.mobileNo.required })}
             />
             {errors.mobileNo && (
-              <span className='text-red-500'>{`${errors.mobileNo.message}`}</span>
+              <span className='text-red-500 text-sm'>{`${errors.mobileNo.message}`}</span>
             )}
           </div>
         </div>
@@ -104,7 +104,7 @@ const TripDetailsForm: React.FC<Iprop> = ({
               })}
             />
             {errors.email && (
-              <span className='text-red-500'>{`${errors.email.message}`}</span>
+              <span className='text-red-500 text-sm'>{`${errors.email.message}`}</span>
             )}
             <p className='text-[12px] text-[#6c757d]'>
               Booking confirmation will be sent to this email
@@ -132,7 +132,7 @@ const TripDetailsForm: React.FC<Iprop> = ({
               {...register('pickupDate', { required: validationRules.pickupDate.required })}
             />
             {errors.pickupDate && (
-              <span className='text-red-500'>{`${errors.pickupDate.message}`}</span>
+              <span className='text-red-500 text-sm'>{`${errors.pickupDate.message}`}</span>
             )}
           </div>
           <div className='basis-1/2'>
@@ -142,7 +142,7 @@ const TripDetailsForm: React.FC<Iprop> = ({
               {...register('pickupTime', { required: validationRules.pickupTime.required })}
             />
             {errors.pickupTime && (
-              <span className='text-red-500'>{`${errors.pickupTime.message}`}</span>
+              <span className='text-red-500 text-sm'>{`${errors.pickupTime.message}`}</span>
             )}
           </div>
         </div>
