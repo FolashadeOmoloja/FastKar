@@ -15,6 +15,7 @@ interface Iprop {
     distance: '',
     price: 0,
     vehicleType: ''
+    vehImg: ''
   }) => void; 
  propSecondUseState?: (value: boolean) => void; 
  
@@ -25,14 +26,17 @@ const CarList:React.FC<Iprop> = ({travelDistance, drop, pick,duration, distance,
     const [changeBg, setChangeBg] = useState(-1);
     const [tripPrice, setTripPrice]= useState('')
     const [vehicleName, setVehicleName] = useState('')
+    const [vehicleImg, setVehicleimage] = useState('')
     const [price, setPrice] = useState(0)
     const [warning,setWarning] = useState('hidden')
-    const handleItemClick = (index: number, basePrice:number, vehName: string) => {
+    const handleItemClick = (index: number, basePrice:number, vehName: string, vehImg: string) => {
         setChangeBg(index);
         setVehicleName(vehName)
+        setVehicleimage(vehImg)
         const distance = calculateTripPrice(travelDistance, basePrice)
          setTripPrice(distance.totalPriceDisplay)
          setPrice(distance.totalPrice)
+       
       };
 
       const collectDataButtonClick = () =>{
@@ -43,7 +47,9 @@ const CarList:React.FC<Iprop> = ({travelDistance, drop, pick,duration, distance,
             duration: duration as '',
             distance: distance as '',
             price: price.toFixed(2) as unknown as 0,
-            vehicleType: vehicleName as ''
+            vehicleType: vehicleName as '',
+            vehImg: vehicleImg as ''
+
           }
           
          if(propUseState){
@@ -84,7 +90,7 @@ const CarList:React.FC<Iprop> = ({travelDistance, drop, pick,duration, distance,
                     }
                     return (
                         <div key={index} className={`rounded-lg h-[200px] w-[200px] bg-white flex flex-col justify-between items-center min-w-[152px] cursor-pointer ${index === changeBg?'bg-bluegradient text-white': ''}`}  
-                        onClick={() => handleItemClick(index, veh.basePrice, veh.type)}
+                        onClick={() => handleItemClick(index, veh.basePrice, veh.type, veh.image)}
                         >
                             <span className="text-sm mt-2">{veh.type}</span>
                             <div className={`flex  ${index === changeBg?'hidden': ''}`}>{stars}</div>

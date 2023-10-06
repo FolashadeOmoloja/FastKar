@@ -23,7 +23,8 @@ interface Iprop {
     duration: '',
     distance: '',
     price: 0,
-    vehicleType: ''
+    vehicleType: '',
+    vehImg: ''
   }) => void; 
   propSecondUseState?: (value: boolean) => void; 
 }

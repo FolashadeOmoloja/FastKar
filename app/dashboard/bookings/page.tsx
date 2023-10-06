@@ -12,7 +12,8 @@ const Bookings = () => {
     duration: '',
     distance: '',
     price: 0,
-    vehicleType: ''
+    vehicleType: '',
+    vehImg: ''
   })
   const [show, setShow] = useState(false)
   return (
@@ -26,9 +27,10 @@ const Bookings = () => {
                 duration: '',
                 distance: '',
                 price: 0,
-                vehicleType: ''
+                vehicleType: '',
+                vehImg: ''
                 
-              } }/>
+              } } propUseState={setShow}/>
 
             }
       
