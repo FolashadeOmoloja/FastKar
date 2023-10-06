@@ -18,6 +18,7 @@ const Bookings = () => {
   })
   const [show, setShow] = useState(false)
   const [secondShow, setSecondShow] = useState(true)
+  const [uniqueId, setUniqueId] = useState('')
   return (
         <section >
             {
@@ -33,7 +34,7 @@ const Bookings = () => {
                 vehicleType: '',
                 vehImg: ''
                 
-              } } propUseState={setShow} propSecondUseState={setSecondShow}
+              } } propUseState={setShow} propSecondUseState={setSecondShow} propThirdUseState={setUniqueId}
               />: <TripConfirmed/>
 
             }
