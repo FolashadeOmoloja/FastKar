@@ -14,9 +14,11 @@ interface Iprop {
         vehImg: ''
       }
       propUseState?: (value: boolean) => void; 
+      propSecondUseState?: (value: boolean) => void; 
+      propThirdUseState?: (value: string) => void; 
   }
 
-const TripDetails:React.FC<Iprop> = ({tripDetailObject, propUseState}) => {
+const TripDetails:React.FC<Iprop> = ({tripDetailObject, propUseState, propSecondUseState,propThirdUseState}) => {
 
     const handleClick = () =>{
           if(propUseState){
@@ -24,11 +26,14 @@ const TripDetails:React.FC<Iprop> = ({tripDetailObject, propUseState}) => {
           }
     }
 
-    console.log(tripDetailObject)
+
   return (
          <section>
            <section className='flex gap-[20px] max-xl:flex-col'>
-           <TripDetailsForm tripDetailObject={tripDetailObject}/>
+           <TripDetailsForm tripDetailObject={tripDetailObject} 
+           propSecondUseState={propSecondUseState}
+           propThirdUseState={propThirdUseState}
+           />
            <TripCards 
            distance={tripDetailObject?.distance}
            duration={tripDetailObject?.duration}

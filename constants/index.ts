@@ -157,4 +157,30 @@ export function calculateDistance(addressFrom: [number,number], addressTo: [numb
     return {totalPrice, totalPriceDisplay};
   }
   
+
+
+
+export function generateUniqueId(): string {
+    let counter = 1;
+    let letterIndex = 0;
+  const prefix = 'FK';
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const currentLetter = letters.charAt(letterIndex);
+
+  const id = counter.toString().padStart(5, '0'); // Pad the counter with leading zeros
+  counter++;
+
+  if (counter > 99999) {
+    // Reset counter and move to the next letter when it reaches 100000
+    counter = 1;
+    letterIndex = (letterIndex + 1) % letters.length;
+  }
+
+  return `${prefix}${id}${currentLetter}`;
+}
+
+// Example usage:
+const uniqueId = generateUniqueId();
+console.log(uniqueId); // Output: OWC00001A
+
   

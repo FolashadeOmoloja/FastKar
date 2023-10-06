@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { generateUniqueId } from '@/constants';
 
 
 interface Iprop {
@@ -10,14 +11,22 @@ interface Iprop {
         price: 0,
         vehicleType: ''
       }
+      propSecondUseState?: (value: boolean) => void; 
+      propThirdUseState?: (value: string) => void; 
   }
 
-const TripDetailsForm:React.FC<Iprop> = ({tripDetailObject}) => {
+const TripDetailsForm:React.FC<Iprop> = ({tripDetailObject, propSecondUseState, propThirdUseState}) => {
 
     const { handleSubmit } = useForm();
 
     const handleSubmitForm = () =>{
-        
+        const uniqueId = generateUniqueId();
+        if(propThirdUseState){
+            propThirdUseState(uniqueId)
+        }
+           if(propSecondUseState){
+            propSecondUseState(false)
+           }
     }
   return (
    <section className='shadow-[0_3px_10px_rgb(0,0,0,0.2)]  bg-white basis-[65%] h-[635px]'>

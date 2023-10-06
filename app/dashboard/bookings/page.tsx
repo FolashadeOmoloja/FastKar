@@ -33,7 +33,7 @@ const Bookings = () => {
                 vehicleType: '',
                 vehImg: ''
                 
-              } } propUseState={setShow}
+              } } propUseState={setShow} propSecondUseState={setSecondShow}
               />: <TripConfirmed/>
 
             }
