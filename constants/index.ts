@@ -15,7 +15,10 @@ export const vehicles = [
         star: 4.5,
         reviews:'289 Reviews',
         description: 'Efficient motorcycle rides: Affordable way to navigate traffic',
-        basePrice: 1
+        basePrice: 1,
+        auto:false,
+        vehname: 'cycle',
+        seat: '1'
     },
 
     {
@@ -24,7 +27,10 @@ export const vehicles = [
         star: 3.5,
         reviews:'289 Reviews',
         description: 'Efficient keke napep rides: Affordable way to navigate traffic',
-        basePrice: 1.3
+        basePrice: 1.3,
+        auto:false,
+        vehname: 'cycle',
+        seat: '3'
     },
     {
         type: 'Economy Compact',
@@ -32,7 +38,10 @@ export const vehicles = [
         star: 4,
         reviews:'799 Reviews',
         description: 'Compact car rides: Affordable way to outsmart heavy traffic.',
-        basePrice: 2.2
+        basePrice: 2.2,
+        auto:true,
+        vehname:'auto',
+        seat: '4'
     },
     {
         type: 'Luxury Ride',
@@ -40,7 +49,10 @@ export const vehicles = [
         star: 4.5,
         reviews:'197 Reviews',
         description: 'Experience elegance and finesse as you travel in luxury',
-        basePrice: 2.8
+        basePrice: 2.8,
+        auto:true,
+       vehname:'auto',
+       seat: '6'
     },
     {
         type: 'Prestige Ride',
@@ -48,7 +60,10 @@ export const vehicles = [
         star: 5,
         reviews:'125 Reviews',
         description: 'Indulge in excellence with our premium car travel in this package.',
-        basePrice: 3.7
+        basePrice: 3.7,
+        auto:true,
+        vehname:'auto',
+        seat: '6'
     },
     {
         type: 'Group Ride',
@@ -56,7 +71,10 @@ export const vehicles = [
         star: 4.8,
         reviews:'950 Reviews',
         description: 'Secure group travels with our reliable and spacious bus package.',
-        basePrice: 4.5
+        basePrice: 4.5,
+        auto:true,
+        vehname:'auto',
+        seat: '24'
     },
 
 ]

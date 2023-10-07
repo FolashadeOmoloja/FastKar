@@ -8,6 +8,10 @@ const validationRules = {
   },
   mobileNo: {
     required: 'Mobile No. is required',
+    pattern: {
+        value: /^[0-9]{11}$/, 
+        message: 'Invalid mobile phone number',
+      },
   },
   email: {
     required: 'Email is required',

@@ -51,7 +51,7 @@ export const NavItem = [
     {
         icon: <BsFillCarFrontFill/>,
         page: 'Cars',
-        href: '#',
+        href: '/dashboard/cars',
         index: 2,
     },
     {
