@@ -58,6 +58,12 @@
 .formdivs input, .textarea{
   @apply rounded-lg border border-[#ced4da] w-full px-[6px] py-[12px] outline-none focus:border-[#2386fead] focus:border-[3px] 
 }
+.card-details:hover{
+  @apply border-2 border-[#29AFFD]
+}
+.card-details:hover .card-show-details{
+  @apply opacity-100 absolute top-0 w-[220px]
+}
 }
 
 

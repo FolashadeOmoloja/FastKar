@@ -11,16 +11,16 @@ const CarListPage = () => {
       <h3 className='text-[20px] '>Car Catalog</h3>
       <p className='text-sm'>Explore Our Cars</p>
       </div>
-      <section className="flex gap-5 flex-wrap">
+      <section className="flex gap-7 flex-wrap">
            {
                vehicles.map((veh, index)=>{
                 return (
-                <div className="max-w-[300px] flex flex-col rounded-[1rem] mx-auto sm:mx-0 bg-white h-[360px] shadow-[0_3px_10px_rgb(0,0,0,0.2)] max-sm:max-w-[270px]">
+                <div className="max-w-[300px] flex flex-col rounded-[1rem] mx-auto sm:mx-0 bg-white h-[360px] shadow-[0_3px_10px_rgb(0,0,0,0.2)] max-sm:max-w-[270px] card-details cursor-pointer">
                 <p className="font-bold mb-6 px-10 pt-6 max-xsm:pt-3">{veh.type}</p>
                 <div className="px-10">
                   <img src={veh.image} alt={"img"}  className="mb-5 h-[200px] w-[340px] "/>
                   </div>
-                 <div className="px-10">
+                 <div className="px-10 relative transition duration-[400ms] ease-in">
                       <div className="text-gray-500 flex justify-between text-sm">
                            <div className="flex flex-col gap-[8px] justify-between items-center">
                             <span>{veh.auto?<BsFillCarFrontFill/>:<PiMotorcycleFill/>}</span>
@@ -35,7 +35,7 @@ const CarListPage = () => {
                             <span>Bags</span>
                           </div>
                       </div>
-                      <div className="book-button opacity-0">
+                      <div className="book-button opacity-0 card-show-details">
                           <span>Show Details</span>
                       </div>
                  </div>
