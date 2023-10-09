@@ -57,7 +57,7 @@ export const NavItem = [
     {
         icon: <HiUsers/>,
         page: 'Riders',
-        href: '#',
+        href: '/dashboard/riders',
         index: 3,
     },
     {

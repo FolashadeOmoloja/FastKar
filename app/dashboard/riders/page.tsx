@@ -1,8 +1,11 @@
+import Riders from "@/components/DashboardComponents/Riders/Riders"
 
 
 const page = () => {
   return (
-    <div>page</div>
+    <section>
+        <Riders/>
+    </section>
   )
 }
 

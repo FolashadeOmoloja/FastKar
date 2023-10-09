@@ -9,14 +9,13 @@ const CarListPage = () => {
     <section>
       <div className="flex justify-between mb-7 font-semibold">
       <h3 className='text-[20px] '>FastKar Catalog</h3>
-      <p className='text-sm'>Explore Our Cars</p>
+      <p className='text-sm max-sm:hidden'>Explore Our Cars</p>
       </div>
-      {/* shadow-[0_3px_10px_rgb(0,0,0,0.2)] */}
       <section className="flex gap-7 flex-wrap">
            {
                vehicles.map((veh, index)=>{
                 return (
-                <div className="max-w-[300px] flex flex-col rounded-[1rem] mx-auto sm:mx-0 bg-white h-[360px]  max-sm:max-w-[270px] card-details cursor-pointer" key={index}>
+                <div className="max-w-[300px] flex flex-col rounded-[1rem] mx-auto sm:mx-0 bg-white h-[360px]     shadow-[0_3px_10px_rgb(0,0,0,0.2)] max-sm:max-w-[270px] card-details cursor-pointer" key={index}>
                 <p className="font-bold mb-6 px-10 pt-6 max-xsm:pt-3">{veh.type}</p>
                 <div className="px-10">
                   <img src={veh.image} alt={"img"}  className="mb-5 h-[200px] w-[340px] "/>
