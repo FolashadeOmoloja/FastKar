@@ -109,7 +109,7 @@ export const DriverData = [
     {
       name: 'Elvis Johnson',
       description: 'Experienced driver with a clean record.',
-      qualifications: ['Valid Driver\'s License', 'Defensive Driving Certificate'],
+      qualifications: ['Valid Driver\'s License', 'Defense Driving Certificate'],
       image: '/man1.png',
     },
     {
@@ -127,7 +127,7 @@ export const DriverData = [
     {
         name: 'Fatima Abubakar',
         description: 'Experienced driver with a focus on safety.',
-        qualifications: ['Valid Driver\'s License', 'Defensive Driving Certificate'],
+        qualifications: ['Valid Driver\'s License', 'Defense Driving Certificate'],
         image: '/woman2.png',
       },
       {
