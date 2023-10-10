@@ -104,6 +104,57 @@ export const testimonials = [
 
 ]
 
+
+export const DriverData = [
+    {
+      name: 'Elvis Johnson',
+      description: 'Experienced driver with a clean record.',
+      qualifications: ['Valid Driver\'s License', 'Defensive Driving Certificate'],
+      image: '/man1.png',
+    },
+    {
+      name: 'Bella Ojo',
+      description: 'Safe driver with excellent navigation skills.',
+      qualifications: ['Valid Driver\'s License', 'First Aid Certification'],
+      image: '/woman1.png',
+    },
+    {
+      name: 'Emeka Nwachukwu',
+      description: 'Reliable and punctual driver.',
+      qualifications: ['Valid Driver\'s License', 'Customer Service Training'],
+      image: '/man2.png',
+    },
+    {
+        name: 'Fatima Abubakar',
+        description: 'Experienced driver with a focus on safety.',
+        qualifications: ['Valid Driver\'s License', 'Defensive Driving Certificate'],
+        image: '/woman2.png',
+      },
+      {
+        name: 'Adebayo Adekunle',
+        description: 'Reliable and punctual driver.',
+        qualifications: ['Valid Driver\'s License', 'Customer Service Training'],
+        image: '/man3.png',
+      },
+      {
+        name: 'Fola Damijo',
+        description: 'Skilled driver with excellent navigation skills.',
+        qualifications: ['Valid Driver\'s License', 'CPR Certification'],
+        image: '/woman3.png',
+      },
+
+  ];
+  
+
+  
+  
+
+
+
+
+
+//function
+
 // Haversine formula
 // a = sin²(Δlat/2) + cos(lat1) * cos(lat2) * sin²(Δlon/2)
 // c = 2 * atan2(√a, √(1-a))
