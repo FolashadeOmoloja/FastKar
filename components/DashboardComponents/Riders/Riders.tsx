@@ -13,12 +13,12 @@ const Riders = () => {
                 DriverData.map((veh,index)=>{
                     return(
                         <section key={index} className="flex p-2 w-[450px] max-lg:flex-col max-xlg:w-[340px] bg-white max-md:w-[290px] max-xsm:w-[280px]">
-                             <div className="basis-1/2 h-full bg-gray-200 flex items-center justify-center">
+                             <div className="basis-1/2 h-full bg-bluegradient flex items-center justify-center">
                                 <img src={veh.image} alt="driver" className="w-full h-full" />
                              </div>   
-                             <div className="flex flex-col gap-2 basis-1/2">
-                                 <p className="p-3 bg-gray-200">FastKar</p>
-                                 <span>{veh.name}</span>
+                             <div className="flex flex-col gap-2 basis-1/2 p-3">
+                                 {/* <p className=" bg-gray-200">FastKar</p> */}
+                                 <span className="bg-bluegradient py-2 text-white">{veh.name}</span>
                                  <p>{veh.description}</p>
                                  <p>{veh.qualifications}</p>
                                  <button className="border-b bg-transparent">View More</button>
