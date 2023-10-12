@@ -1,8 +1,10 @@
-import React from 'react'
+import Homepage from "@/components/DashboardComponents/Home/Homepage"
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+       <Homepage/>
+    </div>
   )
 }
 
