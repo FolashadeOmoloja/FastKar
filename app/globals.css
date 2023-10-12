@@ -64,6 +64,10 @@
 .card-details:hover .card-show-details{
   @apply opacity-100 absolute top-0 w-[220px]
 }
+
+.customercarediv{
+  @apply w-[50px] h-[50px] flex items-center justify-center text-lg text-white rounded-[50%]
+}
 }
 
 
@@ -114,13 +118,18 @@ border: 1px solid white;
 
 
 .icon-container {
-  transition: transform 0.5s;
+  transition: all 0.5s;
   cursor: pointer;
 }
 
 .rotate {
   transform: rotate(180deg);
 }
+
+.helpline {
+  transition: top 0.5s; /* Add this transition */
+}
+
 
 
 
