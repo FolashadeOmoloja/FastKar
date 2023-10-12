@@ -14,9 +14,9 @@ const CustomerCareIcon = () => {
 
   return (
     <div className='relative'>
-       <div className={`bg-[#4285f4] helpline absolute  customercarediv ${showCross?'top-[0]':'top-[-120px]'}`}><MdEmail/></div> 
-      <div className={`bg-[#25D366] helpline absolute customercarediv ${showCross?'top-[-0px] ':'top-[-60px] '}`}><BsWhatsapp/></div>
-      <div className={`bg-bluegradient customercarediv icon-container ${showCross ? 'rotate' : ''}` } onClick={handleClick}>
+       <div className={`bg-[#4285f4] helpline absolute  customercarediv ${showCross?'top-[-120px]':'top-[0]'}`}><MdEmail/></div> 
+      <div className={`bg-[#25D366] helpline absolute customercarediv ${showCross?'top-[-60px] ':'top-[0] '}`}><BsWhatsapp/></div>
+      <div className={`bg-bluegradient relative z-30 customercarediv icon-container ${showCross ? 'rotate' : ''}` } onClick={handleClick}>
         {showCross ? <ImCross /> : <TiMessages />}
       </div>
     </div>
