@@ -3,7 +3,7 @@ import CustomerCareIcon from "../CustomerCareIcon"
 
 const Riders = () => {
   return (
-    <section>
+    <section className="relative">
         
       <div className="flex justify-between mb-7 font-semibold">
          <h3 className='text-[20px] '>FastKar Drivers</h3>
@@ -32,7 +32,9 @@ const Riders = () => {
              }
 
       </section>
-      <CustomerCareIcon/>
+        <div className="fixed right-[20px] bottom-[50px] ">
+        <CustomerCareIcon/>
+        </div>
     </section>
   )
 }
