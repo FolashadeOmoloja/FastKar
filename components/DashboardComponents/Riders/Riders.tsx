@@ -1,4 +1,5 @@
 import { DriverData } from "@/constants"
+import CustomerCareIcon from "../CustomerCareIcon"
 
 const Riders = () => {
   return (
@@ -23,7 +24,7 @@ const Riders = () => {
                                  <span className="text-[#2387FE] ">Qualifications:</span>
                                  <span>{veh.qualifications[0]}</span>
                                  <span>{veh.qualifications[1]}</span>
-                                <div className="mt-auto"><span className="border-b border-[#2387FE] w-[80px] text-[#2387FE] ">View More</span></div>
+                                <div className="mt-auto"><span className="border-b border-[#2387FE] w-[80px] text-[#2387FE] cursor-pointer">View More</span></div>
                             </div>  
                         </section>
                     )
@@ -31,6 +32,7 @@ const Riders = () => {
              }
 
       </section>
+      <CustomerCareIcon/>
     </section>
   )
 }

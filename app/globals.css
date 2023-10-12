@@ -113,6 +113,16 @@ border: 1px solid white;
 }
 
 
+.icon-container {
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+
 
 
 

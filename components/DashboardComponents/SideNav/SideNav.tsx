@@ -8,9 +8,7 @@ export const SideNav = () => {
   const [activeItem, setActiveItem] = useState(0);
   const router = useRouter();
 
-  const handleClick = () => {
-   ;
-  };
+
 
   const handleItemClick = (index: number) => {
     setActiveItem(index);
