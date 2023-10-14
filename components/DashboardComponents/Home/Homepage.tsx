@@ -10,8 +10,11 @@ const Homepage = () => {
         </div>
 
          <section>
-             <Process/>
+             <Process pt='pt-[20px]'/>
          </section>
+         <div>
+            <button className='book-button sm:w-[300px] mt-5'>Book A ride</button>
+         </div>
 
 
     </section>
