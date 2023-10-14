@@ -13,7 +13,6 @@ const BookRideButton:React.FC<ButtonProps>  = ({className,showIcon}) => {
     const router = useRouter();
 
     const handleSignInClick = () => {
-      // Redirect the user to the protected sign-in page (e.g., /dashboard)
       router.push('/dashboard');
     };
 
