@@ -4,11 +4,9 @@ import { useRouter } from "next/navigation";
 import React from 'react';
 import CustomerCareIcon from '../CustomerCareIcon';
 
-interface Iprop{
-    propUseState?: (value:1 ) => void; 
-}
 
-const Homepage:React.FC<Iprop> = ({propUseState}) => {
+
+const Homepage = () => {
     
     const router = useRouter();
     const handleClick = () => {
