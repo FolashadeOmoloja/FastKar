@@ -2,6 +2,7 @@ import { vehicles } from "@/constants"
 import {PiMotorcycleFill} from 'react-icons/pi'
 import {BsFillCarFrontFill} from 'react-icons/bs'
 import {MdOutlineAirlineSeatReclineNormal, MdLuggage , MdNoLuggage} from 'react-icons/md'
+import CustomerCareIcon from "../CustomerCareIcon"
 
 
 const CarListPage = () => {
@@ -44,6 +45,9 @@ const CarListPage = () => {
                })
            }
       </section>
+      <div className="fixed right-[20px] bottom-[50px] ">
+        <CustomerCareIcon/>
+        </div>
     </section>
   )
 }
