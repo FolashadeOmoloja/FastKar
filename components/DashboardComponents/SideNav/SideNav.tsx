@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { NavItem } from '@/constants/constants';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Homepage from '../Home/Homepage';
 
 export const SideNav = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -33,8 +34,12 @@ export const SideNav = () => {
               </div>
               <div className="w-[20px] h-[50px] absolute top-0 right-0 bg-[#AED6EF] rounded-l-full"></div>
             </li>
+            <div className='hidden'>
+                <Homepage propUseState={()=>setActiveItem(1)}/>
+            </div>
           </div>
         ))}
+
       </ul>
     </nav>
   );

@@ -1,7 +1,13 @@
+"use client"
 import Process from '@/components/Process'
 import { useRouter } from "next/navigation";
+import React from 'react';
 
-const Homepage = () => {
+interface Iprop{
+    propUseState?: (value:1 ) => void; 
+}
+
+const Homepage:React.FC<Iprop> = ({propUseState}) => {
     
     const router = useRouter();
     const handleClick = () => {
@@ -18,7 +24,8 @@ const Homepage = () => {
              <Process pt='pt-[20px]'/>
          </section>
          <div>
-            <button className='book-button sm:w-[300px] mt-10' onClick={()=>handleClick}>Book A ride</button>
+            <button className='book-button sm:w-[300px] mt-10' 
+            onClick={()=>{ propUseState}}>Book A ride</button>
          </div>
 
 
