@@ -1,7 +1,5 @@
 import Header from '@/components/DashboardComponents/Header'
 import MobileSidebar from '@/components/DashboardComponents/SideNav/MobileNav'
-import { SideNav } from '@/components/DashboardComponents/SideNav/SideNav'
-
 
 export default function RootLayout({
   children,
