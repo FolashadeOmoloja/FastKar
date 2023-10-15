@@ -5,12 +5,40 @@ import {AiOutlineMinus} from 'react-icons/ai'
 
 const FaqBox = () => {
   const [faqs, setfaqs] = useState([
-    {id:0, open: false, p:'Can I work on a project I started before the hackathon?'},
-    {id:1, open: false, p:'What happens if I need help during the hackathon?'},
-    {id:2, open: false, p:"What happens if I don't have an idea for a project?"},
-    {id:3, open: false, p:'Can I join a team or do I have to come with one?'}, 
-    {id:4, open: false, p:'What happens after the hackathon ends'},
-    {id:5, open: false, p:'Can I work on a project I started before the hackathon'},
+    {id:0, 
+    open: false, 
+    p:'What sets FastKar apart from other taxi services?',
+    ans: 'FastKar stands out with its commitment to safety, quality, and exceptional customer service, ensuring a superior travel experience.'
+  },
+    {id:1, 
+    open: false, 
+    p:'Is FastKar available 24/7 for my convenience?',
+    ans: "Yes, FastKar provides round-the-clock service, ensuring that we're always available to meet your transportation needs."
+  
+  },
+    {id:2, 
+    open: false, 
+    p:"How can I book a ride with FastKar?",
+    ans: 'Booking a FastKar ride is easy; simply use our website to request a ride anytime, anywhere.'
+  },
+    {id:3, 
+    open: false, 
+    p:'Can I book a FastKar ride for a future date?',
+    ans: 'Yes, you can schedule FastKar rides up to 8 days in advance to secure your transportation.'
+  
+  }, 
+    {id:4, 
+    open: false, 
+    p:'Are FastKar drivers professionally trained?',
+    ans: 'Yes, all FastKar drivers undergo professional training to ensure passenger safety.'
+  
+  },
+    {id:5, 
+    open: false, 
+    p:'Can I trust FastKar for secure and convenient rides?',
+    ans: 'FastKar guarantees secure and convenient transportation for all passengers.'
+     
+  },
 
 ])
 
@@ -31,16 +59,16 @@ const FaqBox = () => {
   return (
 <div className="mt-[43px]">
 {
-    faqs.map(({id,open,p})=>{
+    faqs.map(({id,open,p, ans})=>{
         return(
           
-          <div className="border-b-[1px] pb-[13px] pt-[25px] border-[#D434FE] text-sm " key={id}>
+          <div className="border-b-[1px] pb-[13px] pt-[25px] border-[#2387FE] text-sm " key={id}>
           <div className= 'flex justify justify-between '>
           <p>{p}</p>
-           <span className='text-[#D434FE] cursor-pointer flex flex-col max-sm:justify-center' onClick = {() => toogleFAQ(id)}>{open? <AiOutlineMinus/>: <AiOutlinePlus/>}</span>
+           <span className='text-[#2387FE] cursor-pointer flex flex-col max-sm:justify-center' onClick = {() => toogleFAQ(id)}>{open? <AiOutlineMinus/>: <AiOutlinePlus/>}</span>
           </div>
           <div className={` ${(open ? `block` :'hidden')} mt-3`} >
-            <p>Lorem ipsum dolor sit amet consectetur. Ac lobortis bland  eros nis modo ullamcorper metus nullam sed  bland nisl. Commodo ull</p>
+            <p>{ans}</p>
           </div>
       
           
