@@ -13,7 +13,6 @@ export default function RootLayout({
         <html lang="en">
           <body >
             <Header/>
-            <SideNav/>
             <MobileSidebar/>
             <section className="dashboardsection h-full w-full p-8 z-0 max-xsm:p-5">
             {children}

@@ -26,7 +26,7 @@ const Homepage:React.FC<Iprop> = ({propUseState}) => {
          </section>
          <div>
             <button className='book-button sm:w-[300px] mt-10' 
-            onClick={()=>{ propUseState}}>Book A ride</button>
+            onClick={()=>{ handleClick()}}>Book A ride</button>
          </div>
          <div className="fixed right-[20px] bottom-[50px] ">
         <CustomerCareIcon/>

@@ -3,6 +3,7 @@ import Booking from "@/components/DashboardComponents/Bookingss/Booking"
 import TripDetails from "@/components/DashboardComponents/Bookingss/TripDetails/TripDetails"
 import TripConfirmed from "@/components/DashboardComponents/Bookingss/TripConfirmed/TripConfirmed"
 import { useState } from "react"
+import { SideNav } from "@/components/DashboardComponents/SideNav/SideNav"
 
 
 
@@ -21,6 +22,7 @@ const Bookings = () => {
   const [uniqueId, setUniqueId] = useState('')
   return (
         <section >
+            <SideNav activeItem={1}/>
             {
               show? 
               <Booking propSecondUseState={setShow} propUseState={setTripdetailObject}/>
