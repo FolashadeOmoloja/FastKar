@@ -69,7 +69,7 @@ export const NavItem = [
     {
         icon: <RiCustomerService2Fill/>,
         page: 'Customer Support',
-        href: '#',
+        href: '/dashboard/customer-support',
         index: 5,
     },
     {
