@@ -24,7 +24,7 @@ const Homepage = () => {
          </section>
          <div>
             <button className='book-button sm:w-[300px] mt-10' 
-            onClick={()=>{ handleClick()}}>Book A ride</button>
+            onClick={()=>{ handleClick()}}>Start Booking</button>
          </div>
          <div className="fixed right-[20px] bottom-[50px] ">
         <CustomerCareIcon/>
