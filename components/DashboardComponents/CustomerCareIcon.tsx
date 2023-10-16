@@ -14,11 +14,15 @@ const CustomerCareIcon = () => {
 
   return (
     <div className='relative'>
-       <div className={`bg-[#4285f4] w-full helpline absolute customercarediv ${showCross?'top-[-120px]':'top-[0]'}`}>
-          <span className='bg-white absolute right-[50px] rounded-[10px] text-black px-7 py-2'>Email</span>
+       <div className={`bg-[#4285f4] cursor-pointer helpline absolute customercarediv ${showCross?'top-[-120px]':'top-[0]'}`}>
+          <span className='hidden iconhover bg-bluegradient absolute right-[60px] rounded-[10px] px-7 py-2'>
+            Email</span>
           <span><MdEmail/> </span>
         </div> 
-      <div className={`bg-[#25D366] helpline absolute customercarediv ${showCross?'top-[-60px] ':'top-[0] '}`}><BsWhatsapp/></div>
+      <div className={`bg-[#25D366] cursor-pointer helpline absolute customercarediv ${showCross?'top-[-60px] ':'top-[0] '}`}>
+      <span className='hidden iconhover bg-bluegradient absolute right-[60px] rounded-[10px] px-7 py-2'>
+      Whatsapp</span>  
+      <BsWhatsapp/></div>
       <div className={`bg-bluegradient relative z-30 customercarediv icon-container ${showCross ? 'rotate' : ''}` } onClick={handleClick}>
         {showCross ? <ImCross /> : <TiMessages />}
       </div>
