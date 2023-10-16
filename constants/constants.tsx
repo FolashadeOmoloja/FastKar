@@ -63,7 +63,7 @@ export const NavItem = [
     {
         icon: <RiHistoryFill/>,
         page: 'Track Bookings',
-        href: '#',
+        href: '/dashboard/track-bookings',
         index: 4,
     },
     {
