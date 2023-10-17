@@ -46,7 +46,6 @@ const FaqBox = () => {
     setfaqs(faqs.map((faq, i) =>{
       if (i === index) {
         faq.open = !faq.open
-        console.log('open')
       } else {
         faq.open = false;
       }

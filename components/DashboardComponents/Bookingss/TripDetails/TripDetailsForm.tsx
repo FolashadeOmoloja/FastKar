@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { generateUniqueId } from '@/constants';
 import {collection, addDoc} from 'firebase/firestore';
+import { useState } from 'react';
 
 // Define validation rules for each form field
 const validationRules = {
@@ -53,7 +54,33 @@ const TripDetailsForm: React.FC<Iprop> = ({
     formState: { errors, isSubmitting },
   } = useForm();
 
+
+  const [newItem, setNewItem] = useState(
+    { fullName: '', 
+    email: '' ,
+    addressFrom: '',
+    addressTo:'',
+    time: '',
+    flightDetails:'',
+    pickupTime: '',
+      
+  
+  });
+
+  //add Item to firebase
+  const addItem = async () => {
+    // if (newItem.name !== '' && newItem.price !== '') {
+    //   // setItems([...items, newItem]);
+    //   await addDoc(collection(db, 'items'), {
+    //     name: newItem.name.trim(),
+    //     price: newItem.price,
+    //   });
+    //   setNewItem({ name: '', price: '' });
+    // }
+  };
+
   const onSubmit = (data: any) => {
+    console.log(data)
     // Handle form submission here
     const uniqueId = generateUniqueId();
     if (propThirdUseState) {
@@ -62,6 +89,8 @@ const TripDetailsForm: React.FC<Iprop> = ({
     if (propSecondUseState) {
       propSecondUseState(false);
     }
+
+    addItem()
   };
 
   return (
@@ -89,7 +118,9 @@ const TripDetailsForm: React.FC<Iprop> = ({
             <input
               type='tel'
               placeholder='Enter your Mobile No.'
-              {...register('mobileNo', { required: validationRules.mobileNo.required })}
+              {...register('mobileNo', { required: validationRules.mobileNo.required,
+                pattern: validationRules.mobileNo.pattern,
+              })}
             />
             {errors.mobileNo && (
               <span className='text-red-500 text-sm'>{`${errors.mobileNo.message}`}</span>
