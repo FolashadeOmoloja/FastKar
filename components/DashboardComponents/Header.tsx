@@ -20,9 +20,9 @@ const Header = async () => {
        </section>
        <section className="flex items-center gap-2 text-sm cursor-pointer">
          <div>
-            <img src="/user3.png" alt=""  className="w-[50px] h-[50px] rounded-full"/>
+            <img src={session?.user?.image ?? '/user3.png'} alt=""  className="w-[50px] h-[50px] rounded-full"/>
          </div>
-         <p >Shade Omoloja</p>
+         <p >{session?.user?.name}</p>
          <BiSolidChevronDown/>
          <section className="max-xsm:hidden">
          <BsFillBellFill/>
