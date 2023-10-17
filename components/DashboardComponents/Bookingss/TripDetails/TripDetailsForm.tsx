@@ -80,15 +80,15 @@ const TripDetailsForm: React.FC<Iprop> = ({
   };
 
   const onSubmit = (data: any) => {
-    console.log(data)
+    console.log('hi', data)
     // Handle form submission here
     const uniqueId = generateUniqueId();
     if (propThirdUseState) {
       propThirdUseState(uniqueId);
     }
-    if (propSecondUseState) {
-      propSecondUseState(false);
-    }
+    // if (propSecondUseState) {
+    //   propSecondUseState(false);
+    // }
 
     addItem()
   };
