@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { generateUniqueId } from '@/constants';
+import {collection, addDoc} from 'firebase/firestore';
 
 // Define validation rules for each form field
 const validationRules = {
