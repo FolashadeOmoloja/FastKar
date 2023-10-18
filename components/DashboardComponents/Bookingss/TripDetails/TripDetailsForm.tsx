@@ -4,6 +4,7 @@ import { generateUniqueId } from '@/constants';
 import {collection, addDoc} from 'firebase/firestore';
 import {db} from '@/app/api/firebase/config'
 import { useSession,getSession } from "next-auth/react";
+import { Session } from 'next-auth';
 
 
 // Define validation rules for each form field
@@ -46,7 +47,7 @@ interface Iprop {
   propThirdUseState?: (value: string) => void;
 }
 
-const TripDetailsForm: React.FC<Iprop> = async ({
+const TripDetailsForm: React.FC<Iprop> =  ({
   tripDetailObject,
   propSecondUseState,
   propThirdUseState,
@@ -59,20 +60,33 @@ const TripDetailsForm: React.FC<Iprop> = async ({
   
   const [userId,setUserId] = useState<any>()
 //getSession and save as id
-const session = await getSession()
-  useEffect(() => {
+
+let session: Session | {user: any} |null;
+
+const getTheSession = async () => {
+  return new Promise(async (resolve) => {
+    session = await getSession();
+    resolve(session);
+  });
+};
+
+useEffect(() => {
+  getTheSession().then((session) => {
     if (session) {
-           setUserId(session.user?.email )
+      setUserId((session as { user: any }).user?.email ?? 'defaultEmail');
     }
-  }, [session]);
-  console.log(userId)
+  });
+}, []);
+console.log(userId);
+
 
 
   //add Item to firebase
   const addItem = async (data:any) => {
    
     if (data) {
-      console.log(data)
+      const currentTimestamp = Date.now();
+      const formattedDate = new Date(currentTimestamp).toLocaleDateString('en-GB');
        await addDoc(collection(db, 'items'), {
     fullName: data.fullName.trim(),
      mobileNo:  data.mobileNo.trim(), 
@@ -83,7 +97,9 @@ const session = await getSession()
      pickupAddress:  data.pickupAddress.trim(),
      pickupTime:  data.pickupTime.trim(),
       specialRequest:  data.specialRequest.trim(),
-      dateOfbooking: Date.now.toString()
+      dateOfbooking: formattedDate,
+      id: userId
+
   }
     )
     if (propSecondUseState) {

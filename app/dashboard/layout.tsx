@@ -1,7 +1,6 @@
 import Header from '@/components/DashboardComponents/Header'
 import MobileSidebar from '@/components/DashboardComponents/SideNav/MobileNav'
-import { GetSessionParams, SessionProvider } from "next-auth/react"
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode,
@@ -21,9 +20,3 @@ export default async function RootLayout({
 }
 
 
-// export async function getServerSideProps(context: GetSessionParams | undefined) {
-
-//   return {
-//     props: { session }
-//   }
-// }
