@@ -1,4 +1,5 @@
 import {AiOutlineCheck} from 'react-icons/ai'
+import { useRouter } from 'next/navigation'
 
 interface Iprop{
     uniqueID?: string
@@ -6,6 +7,7 @@ interface Iprop{
 
 
 const TripConfirmed:React.FC<Iprop> = ({uniqueID }) => {
+  const router = useRouter();
   return (
     <section className='flex flex-col justify-center items-center gap-5 text-center'>
            <div>
@@ -17,7 +19,7 @@ const TripConfirmed:React.FC<Iprop> = ({uniqueID }) => {
             <p>Your Booking ID Is <span className='font-semibold'>"{uniqueID}"</span>, You Will Get An Email Invoice Soon!</p> 
              <span>Your Driver Details Will Be Updated Shortly.</span>
              <span>Payment would be sorted out on site</span>
-             <button className='book-button'>Track Booking</button>
+             <button className='book-button' onClick={()=>router.push('/dashboard/track-bookings')}>Track Booking</button>
            
         
     </section>
