@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { generateUniqueId } from '@/constants';
 import {collection, addDoc} from 'firebase/firestore';
+import {db} from '@/app/api/firebase/config'
 import { useState } from 'react';
 
 // Define validation rules for each form field
@@ -55,42 +56,40 @@ const TripDetailsForm: React.FC<Iprop> = ({
   } = useForm();
 
 
-  const [newItem, setNewItem] = useState(
-    { fullName: '', 
-    email: '' ,
-    addressFrom: '',
-    addressTo:'',
-    time: '',
-    flightDetails:'',
-    pickupTime: '',
-      
-  
-  });
-
   //add Item to firebase
-  const addItem = async () => {
-    // if (newItem.name !== '' && newItem.price !== '') {
-    //   // setItems([...items, newItem]);
-    //   await addDoc(collection(db, 'items'), {
-    //     name: newItem.name.trim(),
-    //     price: newItem.price,
-    //   });
-    //   setNewItem({ name: '', price: '' });
-    // }
+  const addItem = async (data:any) => {
+   
+    if (data) {
+      console.log(data)
+       await addDoc(collection(db, 'items'), {
+    fullName: data.fullName.trim(),
+     mobileNo:  data.mobileNo.trim(), 
+     email:  data.email.trim(), 
+     flightDetails:  data.flightDetails.trim(), 
+     pickupDate:  data.pickupDate.trim(),
+     dropoffAddress:  data.dropoffAddress.trim(),
+     pickupAddress:  data.pickupAddress.trim(),
+     pickupTime:  data.pickupTime.trim(),
+      specialRequest:  data.specialRequest.trim(),
+  }
+    )
+    if (propSecondUseState) {
+      propSecondUseState(false);
+    }
+  
+  }
   };
 
   const onSubmit = (data: any) => {
-    console.log('hi', data)
+
     // Handle form submission here
     const uniqueId = generateUniqueId();
     if (propThirdUseState) {
       propThirdUseState(uniqueId);
     }
-    // if (propSecondUseState) {
-    //   propSecondUseState(false);
-    // }
 
-    addItem()
+
+    addItem(data)
   };
 
   return (
@@ -190,15 +189,17 @@ const TripDetailsForm: React.FC<Iprop> = ({
               type='text'
               placeholder='Address'
               value={tripDetailObject?.pick}
+              {...register('pickupAddress')}
               readOnly
             />
           </div>
           <div className='basis-1/2'>
-            <label>Drop Address:</label>
+            <label>Dropoff Address:</label>
             <input
               type='text'
               placeholder='Address'
               value={tripDetailObject?.drop}
+              {...register('dropoffAddress')}
               readOnly
             />
           </div>
