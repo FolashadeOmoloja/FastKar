@@ -1,8 +1,10 @@
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { generateUniqueId } from '@/constants';
 import {collection, addDoc} from 'firebase/firestore';
 import {db} from '@/app/api/firebase/config'
-import { useState } from 'react';
+import { useSession } from "next-auth/react";
+
 
 // Define validation rules for each form field
 const validationRules = {
@@ -54,6 +56,16 @@ const TripDetailsForm: React.FC<Iprop> = ({
     register,
     formState: { errors, isSubmitting },
   } = useForm();
+  
+  const [userId,setUserId] = useState<any>()
+//getSession and save as id
+  const { data: session } = useSession();
+  useEffect(() => {
+    if (session) {
+           setUserId(session.user?.email )
+    }
+  }, [session]);
+  console.log(userId)
 
 
   //add Item to firebase
@@ -71,6 +83,7 @@ const TripDetailsForm: React.FC<Iprop> = ({
      pickupAddress:  data.pickupAddress.trim(),
      pickupTime:  data.pickupTime.trim(),
       specialRequest:  data.specialRequest.trim(),
+      dateOfbooking: Date.now.toString()
   }
     )
     if (propSecondUseState) {
