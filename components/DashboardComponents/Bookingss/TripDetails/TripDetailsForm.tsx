@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { generateUniqueId } from '@/constants';
 import {collection, addDoc} from 'firebase/firestore';
 import {db} from '@/app/api/firebase/config'
-import { useSession } from "next-auth/react";
+import { useSession,getSession } from "next-auth/react";
 
 
 // Define validation rules for each form field
@@ -46,7 +46,7 @@ interface Iprop {
   propThirdUseState?: (value: string) => void;
 }
 
-const TripDetailsForm: React.FC<Iprop> = ({
+const TripDetailsForm: React.FC<Iprop> = async ({
   tripDetailObject,
   propSecondUseState,
   propThirdUseState,
@@ -59,7 +59,7 @@ const TripDetailsForm: React.FC<Iprop> = ({
   
   const [userId,setUserId] = useState<any>()
 //getSession and save as id
-  const { data: session } = useSession();
+const session = await getSession()
   useEffect(() => {
     if (session) {
            setUserId(session.user?.email )

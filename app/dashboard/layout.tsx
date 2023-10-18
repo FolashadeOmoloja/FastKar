@@ -1,22 +1,29 @@
 import Header from '@/components/DashboardComponents/Header'
 import MobileSidebar from '@/components/DashboardComponents/SideNav/MobileNav'
-
-export default function RootLayout({
+import { GetSessionParams, SessionProvider } from "next-auth/react"
+export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
 }) {
+
   return (
- 
-        <html lang="en">
-          <body >
-            <Header/>
-            <MobileSidebar/>
-            <section className="dashboardsection h-full w-full p-8 z-0 max-xsm:p-5">
+    <html lang="en">
+      <body >
+        <Header/>
+        <MobileSidebar/>
+        <section className="dashboardsection h-full w-full p-8 z-0 max-xsm:p-5">
             {children}
-               
         </section>
-            </body>
-        </html>
+      </body>
+    </html>
   )
 }
+
+
+// export async function getServerSideProps(context: GetSessionParams | undefined) {
+
+//   return {
+//     props: { session }
+//   }
+// }
