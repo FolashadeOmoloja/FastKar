@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { generateUniqueId } from '@/constants';
 import {collection, addDoc} from 'firebase/firestore';
 import {db} from '@/app/api/firebase/config'
-import { useSession,getSession } from "next-auth/react";
+import { getSession } from "next-auth/react";
 import { Session } from 'next-auth';
 
 
@@ -77,7 +77,7 @@ useEffect(() => {
     }
   });
 }, []);
-console.log(userId);
+
 
 
 

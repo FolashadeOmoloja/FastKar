@@ -9,22 +9,49 @@ import {
   doc,
 } from 'firebase/firestore';
 import {db} from '@/app/api/firebase/config'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { getSession } from "next-auth/react";
+import { Session } from 'next-auth';
 
 const TrackBooking = () => {
+    
+  const [userId,setUserId] = useState<any>()
+  const [bookingHistory, setBookingHistory] = useState([])
+
+   //getSession
+   let session: Session | {user: any} |null;
+
+const getTheSession = async () => {
+  return new Promise(async (resolve) => {
+    session = await getSession();
+    resolve(session);
+  });
+};
+
+useEffect(() => {
+  getTheSession()
+}, []);
   
 
     // Read items from database
     useEffect(() => {
       const q = query(collection(db, 'items'));
       const unsubscribe = onSnapshot(q, (querySnapshot) => {
-        let itemsArr: { id: string; }[] = [];
+        let itemsArr: {
+          [x: string]: any; id: string; 
+}[] = [];
   
         querySnapshot.forEach((doc) => {
           itemsArr.push({ ...doc.data(), id: doc.id });
         });
-        console.log(itemsArr)
-        // return () => unsubscribe();
+        itemsArr.forEach((item)=>{
+          console.log(item?.userId)
+             if(session?.user?.email  == item?.userId){
+              console.log('hi')
+             }
+        })
+        // console.log(itemsArr)
+      
       });
     }, []);
   return (
