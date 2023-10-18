@@ -17,7 +17,7 @@ const Bookings = () => {
     vehicleType: '',
     vehImg: ''
   })
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
   const [secondShow, setSecondShow] = useState(true)
   const [uniqueId, setUniqueId] = useState('')
   return (
