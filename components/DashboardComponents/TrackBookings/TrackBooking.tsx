@@ -13,12 +13,32 @@ import { useEffect, useState } from 'react';
 import { getSession } from "next-auth/react";
 import { Session } from 'next-auth';
 import { useRouter } from 'next/navigation';
-import { assignDriver } from '@/constants';
+
 
 const TrackBooking = () => {
     
   const [userId,setUserId] = useState<any>()
-  const [bookingHistory, setBookingHistory] = useState([])
+  const [bookingArray, setBookingArray] = useState([])
+  const [bookingHistory, setBookingHistory] = useState([
+    {
+      fullName: '',
+      mobileNo:  '', 
+      email:  '', 
+      flightDetails: '', 
+      pickupDate: '',
+      dropoffAddress:  '',
+      pickupAddress:  '',
+      pickupTime: '',
+       specialRequest:'' ,
+       dateOfbooking: '',
+       driverInfo:{
+           driverImageSrc:'',
+           driverName:''
+       },
+       vehicleType: '',
+       duration: ''
+    }
+  ])
   const bookingArr: { [x: string]: any; id: string; }[] = []
   const sample=[]
   const router = useRouter();
@@ -65,6 +85,7 @@ const TrackBooking = () => {
              }
         })
         setBookingHistory(bookingArr as [])
+        setBookingArray(bookingArr as [])
       
       });
       return () => unsubscribe();
@@ -78,16 +99,17 @@ const TrackBooking = () => {
              <section>
                   <section>
                        {
-                        bookingHistory.length>=1?(
+                        bookingArray.length>=1?(
                           <section>
                             {
-                              bookingHistory.map((item,index)=>{
+                              bookingHistory.map((item,index,driverInf0)=>{
                                 
                               
                                 return (
-                                 <div className='' key={index}>
-                                     {/* <img src={driverAssigned.driverImageSrc} alt="" />
-                                     <span>{driverAssigned.driverName}</span> */}
+                                 <div className='rounded-lg w-full p-5 bg-[#AED6EF]' key={index} >
+                                      <div>
+                                         <img src={item?.driverInfo?.driverImageSrc } alt="" />
+                                      </div>
                                 </div>)
                               })
                             }
