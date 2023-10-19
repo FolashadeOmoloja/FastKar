@@ -105,7 +105,8 @@ useEffect(() => {
           driverName:driverAssigned.driverName
       },
       vehicleType: tripDetailObject?.vehicleType,
-      duration: tripDetailObject?.duration
+      duration: tripDetailObject?.duration,
+      price: tripDetailObject?.price
   }
     )
     if (propSecondUseState) {

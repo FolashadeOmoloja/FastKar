@@ -36,7 +36,8 @@ const TrackBooking = () => {
            driverName:''
        },
        vehicleType: '',
-       duration: ''
+       duration: '',
+       price: ''
     }
   ])
   const bookingArr: { [x: string]: any; id: string; }[] = []
@@ -100,16 +101,33 @@ const TrackBooking = () => {
                   <section>
                        {
                         bookingArray.length>=1?(
-                          <section>
+                          <section className='flex flex-col gap-8 mt-8'>
                             {
-                              bookingHistory.map((item,index,driverInf0)=>{
+                              bookingHistory.map((item,index)=>{
                                 
                               
                                 return (
-                                 <div className='rounded-lg w-full p-5 bg-[#AED6EF]' key={index} >
-                                      <div>
-                                         <img src={item?.driverInfo?.driverImageSrc } alt="" />
-                                      </div>
+                                 <div className='rounded-lg w-full p-5 bg-[#AED6EF] flex justify-between' key={index} >
+                                  <div className='text-sm flex flex-col gap-3'>
+                                      <p className='font-bold text-[16px]'>Driver Info</p>
+                                  <   div className='w-[100px] h-[100px] bg-white rounded-lg'>
+                                         <img src={item?.driverInfo?.driverImageSrc } alt="" className='w-full h-full'/>
+                                      </div> 
+                                      <p className='font-semibold'>Name: {item?.driverInfo?.driverName}</p>                                  
+                                  </div>
+                                  <div className='text-sm flex flex-col gap-3'>
+                                      <span className='font-bold text-[16px]'>Customer Details</span>
+                                      <span className='font-semibold'>Name: <span className='font-normal'>{item.fullName}</span></span>
+                                      <span className='font-semibold'>Pickup Address: <span className='font-normal'>{item.pickupAddress}</span></span>
+                                      <span className='font-semibold'>Drop-Off Address: <span className='font-normal'>{item.dropoffAddress}</span></span>
+                                      <span className='font-semibold'>Vehicle Type: <span className='font-normal'>{item.vehicleType}</span> </span>
+                                      <span className='font-semibold'>Special Request: <span className='font-normal'>{item.specialRequest==''?'Nil':item.specialRequest}</span> </span>
+                                      <span className='font-semibold'>Flight Details: <span className='font-normal'>{item.flightDetails==''?'Nil':item.flightDetails}</span> </span>
+                                      <span className='font-semibold'>Date of Booking: <span className='font-normal'>{item.dateOfbooking}</span> </span>
+                                      <span  className='font-semibold'>Total Fare: <span className='font-semibold'></span>&#8358; {item.price ? (Number(item.price) + 120).toFixed(2) : '0.00'}</span>
+
+                                  </div>
+ 
                                 </div>)
                               })
                             }
