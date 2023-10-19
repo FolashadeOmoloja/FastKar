@@ -103,7 +103,9 @@ useEffect(() => {
       driverInfo:{
           driverImageSrc:driverAssigned.driverImageSrc,
           driverName:driverAssigned.driverName
-      }
+      },
+      vehicleType: tripDetailObject?.vehicleType,
+      duration: tripDetailObject?.duration
   }
     )
     if (propSecondUseState) {
