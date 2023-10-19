@@ -67,6 +67,7 @@ const TrackBooking = () => {
         setBookingHistory(bookingArr as [])
       
       });
+      return () => unsubscribe();
     }, []);
     console.log(bookingHistory)
     //romans 5:15
@@ -82,10 +83,11 @@ const TrackBooking = () => {
                             {
                               bookingHistory.map((item,index)=>{
                                 
-                                  assignDriver()
+                              
                                 return (
                                  <div className='' key={index}>
-
+                                     {/* <img src={driverAssigned.driverImageSrc} alt="" />
+                                     <span>{driverAssigned.driverName}</span> */}
                                 </div>)
                               })
                             }

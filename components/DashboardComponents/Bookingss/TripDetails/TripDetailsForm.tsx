@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { generateUniqueId } from '@/constants';
+import { assignDriver, generateUniqueId } from '@/constants';
 import {collection, addDoc} from 'firebase/firestore';
 import {db} from '@/app/api/firebase/config'
 import { getSession } from "next-auth/react";
@@ -87,6 +87,7 @@ useEffect(() => {
     if (data) {
       const currentTimestamp = Date.now();
       const formattedDate = new Date(currentTimestamp).toLocaleDateString('en-GB');
+      const driverAssigned = assignDriver()
        await addDoc(collection(db, 'items'), {
     fullName: data.fullName.trim(),
      mobileNo:  data.mobileNo.trim(), 
@@ -98,8 +99,11 @@ useEffect(() => {
      pickupTime:  data.pickupTime.trim(),
       specialRequest:  data.specialRequest.trim(),
       dateOfbooking: formattedDate,
-      userId: userId
-
+      userId: userId,
+      driverInfo:{
+          driverImageSrc:driverAssigned.driverImageSrc,
+          driverName:driverAssigned.driverName
+      }
   }
     )
     if (propSecondUseState) {

@@ -249,7 +249,9 @@ export function calculateDistance(addressFrom: [number,number], addressTo: [numb
   
 export const assignDriver = () =>{
  const driverIndex = Math.floor(Math.random() * DriverData.length)
- console.log(driverIndex)
+ const driverImageSrc = DriverData[driverIndex].image
+ const driverName = DriverData[driverIndex].name
+ return {driverImageSrc, driverName}
 }
 
 
