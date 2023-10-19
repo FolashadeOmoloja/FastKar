@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import { getSession } from "next-auth/react";
 import { Session } from 'next-auth';
 import { useRouter } from 'next/navigation';
+import { assignDriver } from '@/constants';
 
 const TrackBooking = () => {
     
@@ -27,20 +28,24 @@ const TrackBooking = () => {
    //getSession
    let session: Session | {user: any} |null;
 
-const getTheSession = async () => {
-  return new Promise(async (resolve) => {
-    session = await getSession();
-    resolve(session);
-  });
-};
-
-useEffect(() => {
-  getTheSession().then((session) => {
-    if (session) {
-      setUserId((session as { user: any }).user?.email ?? 'defaultEmail');
-    }
-  });
-}, []);
+   const getTheSession = async () => {
+    return new Promise(async (resolve) => {
+      session = await getSession();
+      resolve(session);
+    });
+  };
+  
+  useEffect(() => {
+    getTheSession().then((session) => {
+      if (session) {
+        const userEmail = (session as { user: any })?.user?.email;
+        setUserId(userEmail ?? 'defaultEmail');
+      }
+    });
+  }, []);
+  console.log(userId)
+  
+  
   
 
     // Read items from database
@@ -72,19 +77,21 @@ useEffect(() => {
              <section>
                   <section>
                        {
-                        sample.length>=1?(
+                        bookingHistory.length>=1?(
                           <section>
                             {
-                              bookingHistory.map(()=>{
+                              bookingHistory.map((item,index)=>{
+                                
+                                  assignDriver()
                                 return (
-                                 <div>
+                                 <div className='' key={index}>
 
                                 </div>)
                               })
                             }
                           </section>
                         ): (
-                          <div className='flex flex-col items-center justify-center mt-[10px]'>
+                          <div className='flex flex-col text-center items-center justify-center mt-[10px]'>
                                 <div><img src="/CTA.png" alt="img"  className='w-full h-full'/></div>
                                 <span className="text-[20px] font-semibold text-[#2387FE]">Your Booking History is empty at the moment</span>
                                 <button className='book-button sm:w-[200px] mt-5' onClick={()=>{ handleClick()}}>Start Booking</button>
