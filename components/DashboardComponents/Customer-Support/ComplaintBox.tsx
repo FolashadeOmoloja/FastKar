@@ -7,9 +7,10 @@ interface Iprops{
   height?: string
   smWidth?:string
   div?: string
+  placeholder?: string
 }
 
-const ComplaintBox:React.FC<Iprops> = ({cta='Complaint Sent', initCta='Send Complaint', height='h-[200px]', smWidth='w-[300px]', div=''}) => {
+const ComplaintBox:React.FC<Iprops> = ({cta='Complaint Sent', initCta='Send Complaint', height='h-[200px]', smWidth='w-[300px]', div='', placeholder='complaints'}) => {
   const [complaint, setComplaint] = useState('');
   const [complaintSent, setComplaintSent] = useState(false);
 
@@ -21,7 +22,7 @@ const ComplaintBox:React.FC<Iprops> = ({cta='Complaint Sent', initCta='Send Comp
   return (
     <div className={`${div}`}>
       <textarea
-        placeholder="Write your complaints here"
+        placeholder={`Write your ${placeholder} here`}
         className={`${height} w-full resize-none overflow-y-scroll rounded-sm border-[#2387FE] outline-none border bg-transparent p-5` }
         value={complaint}
         name='complaint box'
@@ -35,7 +36,7 @@ const ComplaintBox:React.FC<Iprops> = ({cta='Complaint Sent', initCta='Send Comp
       >
         {complaintSent ? (
           <>
-             {cta}  <span>&#10004;</span>
+             {cta}  <span className='text-white'>&#10004;</span>
           </>
         ) : (
           initCta
