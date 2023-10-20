@@ -14,6 +14,7 @@ import { getSession } from "next-auth/react";
 import { Session } from 'next-auth';
 import { useRouter } from 'next/navigation';
 import StarRating from './StarRating';
+import { BsFillTrashFill } from 'react-icons/bs';
 
 
 const TrackBooking = () => {
@@ -126,8 +127,12 @@ const TrackBooking = () => {
                                   </div>
  
                                 </div>
-                                <div>
-                                  <StarRating/>
+                                <div className='mt-5'>
+                                  <div className='p-3 border-[#2387FE] text-[#2387FE] flex justify-between border rounded-sm font-bold items-center'>
+                                   <span className=' cursor-pointer '> Rate Your Trip</span>
+                                   <span className='cursor-pointer flex items-center max-xsm:text-sm'><BsFillTrashFill/> <span>Delete History</span></span>
+                                  </div>
+                                  {/* <StarRating/> */}
                                 </div>
                                 </div>
                           
