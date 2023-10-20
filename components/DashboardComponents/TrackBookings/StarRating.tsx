@@ -1,17 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { BsStar, BsStarFill } from 'react-icons/bs';
-import ComplaintBox from '../Customer-Support/ComplaintBox';
 import { FaTimes } from 'react-icons/fa';
+import ComplaintBox from '../Customer-Support/ComplaintBox';
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from '@/app/api/firebase/config';
+
 
 interface Iprop{
   propUseState?: (value: boolean) => void; 
   propSecondUseState?:(value: number) => void;
   modal?: boolean
+  tripId?:string
 }
 
-const StarRating:React.FC<Iprop> = ({propUseState, modal, propSecondUseState}) => {
+
+
+const StarRating:React.FC<Iprop> = ({propUseState, modal, propSecondUseState, tripId}) => {
   const [rating, setRating] = useState(0);
   const [filledStars, setFilledStars] = useState([false, false, false, false, false]);
+  console.log(tripId)
+
+
+  //updating the db with the rating
+  const updateItem = async() =>{
+    const docRef = doc(db, "items", tripId as string);
+    await updateDoc(docRef, {
+    rating: rating
+    });
+  }
 
   const handleStarClick = (starIndex:any) => {
     const newRating = starIndex + 1;

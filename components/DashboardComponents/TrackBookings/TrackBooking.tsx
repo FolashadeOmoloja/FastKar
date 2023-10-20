@@ -39,7 +39,9 @@ const TrackBooking = () => {
        },
        vehicleType: '',
        duration: '',
-       price: ''
+       price: '',
+       rating: 0,
+       id:''
     }
   ])
   const bookingArr: { [x: string]: any; id: string; }[] = []
@@ -138,7 +140,7 @@ const TrackBooking = () => {
                                    <span className='cursor-pointer flex items-center '><BsFillTrashFill/> <span className='max-xsm:hidden'>Delete History</span></span>
                                   </div>
                                   {activeModal === index && (
-                                    <StarRating propUseState={setModal} modal={modal} propSecondUseState={setActiveModal}/>
+                                    <StarRating propUseState={setModal} modal={modal} propSecondUseState={setActiveModal} tripId={item.id}/>
                                   )}
 
                                 </div>
