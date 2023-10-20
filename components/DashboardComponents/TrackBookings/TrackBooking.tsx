@@ -128,9 +128,9 @@ const TrackBooking = () => {
  
                                 </div>
                                 <div className='mt-5'>
-                                  <div className='p-3 border-[#2387FE] text-[#2387FE] flex justify-between border rounded-sm font-bold items-center'>
+                                  <div className='p-3 border-[#2387FE] bg-bluegradient text-white flex justify-between border rounded-sm font-bold items-center max-xsm:text-sm'>
                                    <span className=' cursor-pointer '> Rate Your Trip</span>
-                                   <span className='cursor-pointer flex items-center max-xsm:text-sm'><BsFillTrashFill/> <span>Delete History</span></span>
+                                   <span className='cursor-pointer flex items-center '><BsFillTrashFill/> <span className='max-xsm:hidden'>Delete History</span></span>
                                   </div>
                                   {/* <StarRating/> */}
                                 </div>
