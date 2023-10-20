@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import ComplaintBox from '../Customer-Support/ComplaintBox';
+import { FaTimes } from 'react-icons/fa';
 
 interface Iprop{
   propUseState?: (value: boolean) => void; 
+  propSecondUseState?:(value: number) => void;
+  modal?: boolean
 }
 
-const StarRating:React.FC<Iprop> = ({propUseState}) => {
+const StarRating:React.FC<Iprop> = ({propUseState, modal, propSecondUseState}) => {
   const [rating, setRating] = useState(0);
   const [filledStars, setFilledStars] = useState([false, false, false, false, false]);
 
@@ -20,12 +23,27 @@ const StarRating:React.FC<Iprop> = ({propUseState}) => {
   };
 
   useEffect(() => {
-
+    if(modal){
       document.body.style.overflow = 'hidden';
-  }, []);
+    } else{
+      document.body.style.overflow = 'auto'
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [modal]);
+
+  const closeModal = () =>{
+    if(propUseState){
+      propUseState(false)
+    }
+    if(propSecondUseState){
+      propSecondUseState(-1)
+    }
+  }
 
   return (
-    <div className='fixed left-[270px] max-slg:left-0 right-0 bottom-0 top-0 bg-[#2386fe34] overflow-hidden flex items-center justify-center'>
+    <div className='fixed inset-0 slg:left-[270px] bg-[#2386fe71] overflow-hidden flex items-center justify-center'>
           <div className='bg-white rounded-lg w-[600px] h-[350px] relative top-[10%] max-sm:w-[350px] max-xsm:w-[270px] flex flex-col justify-center items-center gap-5 p-5 text-center'>
             <span className='font-semibold'>Rate your Trip, give us your feedback</span>
             <div className="star-rating flex gap-2">
@@ -44,7 +62,9 @@ const StarRating:React.FC<Iprop> = ({propUseState}) => {
               ))}
              </div>
              <ComplaintBox cta='Feedback Sent' initCta='Send Feedback' height='h-[100px]' div='flex justify-center flex-col' placeholder='feedback'/>
+             <div className='text-[#2386fe] text-lg absolute right-[20px] top-[10px] cursor-pointer' onClick={()=>closeModal()}><FaTimes/></div>
           </div>
+
     </div>
   );
 };

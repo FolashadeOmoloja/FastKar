@@ -43,7 +43,12 @@ const TrackBooking = () => {
     }
   ])
   const bookingArr: { [x: string]: any; id: string; }[] = []
-  const sample=[]
+  //modal
+  const [modal,setModal]=useState(false)
+  const [activeModal, setActiveModal] = useState(-1);
+
+
+  //routing
   const router = useRouter();
   const handleClick = () => {
       router.push('/dashboard/bookings');
@@ -129,10 +134,13 @@ const TrackBooking = () => {
                                 </div>
                                 <div className='mt-5'>
                                   <div className='p-3 bg-bluegradient text-white flex justify-between border rounded-sm font-bold items-center max-xsm:text-sm'>
-                                   <span className=' cursor-pointer '> Rate Your Trip</span>
+                                   <span className=' cursor-pointer ' onClick={()=>{setActiveModal(index);setModal(true)}} >Rate Your Trip</span>
                                    <span className='cursor-pointer flex items-center '><BsFillTrashFill/> <span className='max-xsm:hidden'>Delete History</span></span>
                                   </div>
-                                  <StarRating/>
+                                  {activeModal === index && (
+                                    <StarRating propUseState={setModal} modal={modal} propSecondUseState={setActiveModal}/>
+                                  )}
+
                                 </div>
                                 </div>
                           
