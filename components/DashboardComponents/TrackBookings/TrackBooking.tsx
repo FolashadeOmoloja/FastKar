@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import { getSession } from "next-auth/react";
 import { Session } from 'next-auth';
 import { useRouter } from 'next/navigation';
+import StarRating from './StarRating';
 
 
 const TrackBooking = () => {
@@ -64,10 +65,6 @@ const TrackBooking = () => {
       }
     });
   }, []);
-  console.log(userId)
-  
-  
-  
 
     // Read items from database
     useEffect(() => {
@@ -91,7 +88,6 @@ const TrackBooking = () => {
       });
       return () => unsubscribe();
     }, []);
-    console.log(bookingHistory)
     //romans 5:15
   return (
         <section>
@@ -107,15 +103,16 @@ const TrackBooking = () => {
                                 
                               
                                 return (
-                                 <div className='rounded-lg w-full p-5 bg-[#AED6EF] flex justify-between' key={index} >
-                                  <div className='text-sm flex flex-col gap-3'>
+                                  <div  className='rounded-lg w-full p-5 bg-[#AED6EF] '  key={index} >
+                                  <div className=' flex justify-between max-sm:flex-col max-sm:gap-5 max-sm:items-center max-sm:text-center'>
+                                  <div className='text-sm flex flex-col basis-1/2 justify-between max-sm:gap-3'>
                                       <p className='font-bold text-[16px]'>Driver Info</p>
-                                  <   div className='w-[100px] h-[100px] bg-white rounded-lg'>
-                                         <img src={item?.driverInfo?.driverImageSrc } alt="" className='w-full h-full'/>
+                                  <   div className='w-[200px] h-[200px]  bg-white rounded-lg'>
+                                         <img src={item?.driverInfo?.driverImageSrc } alt="driver img" className='w-full h-full'/>
                                       </div> 
                                       <p className='font-semibold'>Name: {item?.driverInfo?.driverName}</p>                                  
                                   </div>
-                                  <div className='text-sm flex flex-col gap-3'>
+                                  <div className='text-sm basis-1/2 flex flex-col gap-3'>
                                       <span className='font-bold text-[16px]'>Customer Details</span>
                                       <span className='font-semibold'>Name: <span className='font-normal'>{item.fullName}</span></span>
                                       <span className='font-semibold'>Pickup Address: <span className='font-normal'>{item.pickupAddress}</span></span>
@@ -128,7 +125,13 @@ const TrackBooking = () => {
 
                                   </div>
  
-                                </div>)
+                                </div>
+                                <div>
+                                  <StarRating/>
+                                </div>
+                                </div>
+                          
+) 
                               })
                             }
                           </section>
