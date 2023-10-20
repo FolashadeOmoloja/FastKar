@@ -20,8 +20,8 @@ const StarRating = () => {
   }, []);
 
   return (
-    <div className='fixed left-[270px] max-slg:left-0 right-0 bottom-0 top-0 bg-[#2386fe34] overflow-hidden'>
-          <div className='bg-white rounded-lg w-[300px] h-[300px] '>
+    <div className='fixed left-[270px] max-slg:left-0 right-0 bottom-0 top-0 bg-[#2386fe34] overflow-hidden flex items-center justify-center'>
+          <div className='bg-white rounded-lg w-[500px] h-[500px] '>
             <div className="star-rating flex">
               {[...Array(5)].map((_, index) => (
                 <span
