@@ -1,7 +1,14 @@
 "use client"
 import { useState } from 'react';
 
-const ComplaintBox = () => {
+interface Iprops{
+  cta?:string
+  initCta?:string
+  height?: string
+  smWidth?:string
+}
+
+const ComplaintBox:React.FC<Iprops> = ({cta='Complaint Sent', initCta='Send Complaint', height='h-[200px]', smWidth='w-[300px]'}) => {
   const [complaint, setComplaint] = useState('');
   const [complaintSent, setComplaintSent] = useState(false);
 
@@ -11,26 +18,26 @@ const ComplaintBox = () => {
   };
 
   return (
-    <div>
+    <div className='flex justify-center flex-col'>
       <textarea
         placeholder="Write your complaints here"
-        className="h-[200px] w-full resize-none overflow-y-scroll rounded-sm border-[#2387FE] outline-none border bg-transparent p-5"
+        className={`${height} w-full resize-none overflow-y-scroll rounded-sm border-[#2387FE] outline-none border bg-transparent p-5` }
         value={complaint}
         name='complaint box'
         onChange={(e) => setComplaint(e.target.value)}
       ></textarea>
       <button
-        className={`book-button sm:w-[300px] mt-7 ${
+        className={`book-button sm:${smWidth} mt-7 ${
           complaintSent ? 'complaint-sent' : ''
         }`}
         onClick={handleComplaintSubmit}
       >
         {complaintSent ? (
           <>
-            Complaint Sent  <span>&#10004;</span>
+             {cta}  <span>&#10004;</span>
           </>
         ) : (
-          'Send Complaint'
+          initCta
         )}
       </button>
     </div>
