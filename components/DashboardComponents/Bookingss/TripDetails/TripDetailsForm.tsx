@@ -106,7 +106,8 @@ useEffect(() => {
       },
       vehicleType: tripDetailObject?.vehicleType,
       duration: tripDetailObject?.duration,
-      price: tripDetailObject?.price
+      price: tripDetailObject?.price,
+      rating: 0
   }
     )
     if (propSecondUseState) {
