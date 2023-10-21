@@ -100,6 +100,14 @@ const TrackBooking = () => {
       // Return a function to unsubscribe from the listener when the component unmounts
       return () => unsubscribe();
     }, []);
+
+
+        //delete an item
+        const deleteItem = async(tripId:string) =>{
+          const docRef = doc(db, "items", tripId as string);
+          await deleteDoc(docRef);
+
+        }
     
     //romans 5:15
   return (
@@ -134,7 +142,7 @@ const TrackBooking = () => {
                                       </div> 
                                       <p className='font-semibold'>Name: {item?.driverInfo?.driverName}</p> 
                                       <div className='flex gap-1 items-center max-sm:justify-center'>
-                                          <span>Ratings:</span>
+                                          <span className='font-semibold'>Ratings:</span>
                                           <div className='flex gap-1'>{stars}</div>
                                       </div>                                 
                                   </div>
@@ -155,7 +163,7 @@ const TrackBooking = () => {
                                 <div className='mt-5'>
                                   <div className='p-3 bg-bluegradient text-white flex justify-between border rounded-sm font-bold items-center max-xsm:text-sm'>
                                    <span className=' cursor-pointer ' onClick={()=>{setActiveModal(index);setModal(true)}} >Rate Your Trip</span>
-                                   <span className='cursor-pointer flex items-center '><BsFillTrashFill/> <span className='max-xsm:hidden'>Delete History</span></span>
+                                   <span className='cursor-pointer flex items-center ' onClick={()=>deleteItem(item.id)}><BsFillTrashFill/> <span className='max-xsm:hidden'>Delete History</span></span>
                                   </div>
                                   {activeModal === index && (
                                     <StarRating propUseState={setModal}  modal={modal} propSecondUseState={setActiveModal} tripId={item.id}/>
