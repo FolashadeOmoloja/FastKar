@@ -14,7 +14,7 @@ import { getSession } from "next-auth/react";
 import { Session } from 'next-auth';
 import { useRouter } from 'next/navigation';
 import StarRating from './StarRating';
-import { BsFillTrashFill } from 'react-icons/bs';
+import { BsFillTrashFill, BsStar, BsStarFill } from 'react-icons/bs';
 
 
 const TrackBooking = () => {
@@ -80,20 +80,20 @@ const TrackBooking = () => {
       const unsubscribe = onSnapshot(q, (querySnapshot) => {
         let itemsArr: {
           [x: string]: any; id: string; 
-}[] = [];
-  
+        }[] = [];
+      
         querySnapshot.forEach((doc) => {
           itemsArr.push({ ...doc.data(), id: doc.id });
         });
         itemsArr.forEach((item)=>{
-             if(session?.user?.email  == item?.userId){
-              bookingArr.push(item)
-             }
+          if(session?.user?.email  == item?.userId){
+            bookingArr.push(item)
+          }
         })
         setBookingHistory(bookingArr as [])
         setBookingArray(bookingArr as [])
-      
       });
+    
       return () => unsubscribe();
     }, []);
     //romans 5:15
@@ -108,7 +108,16 @@ const TrackBooking = () => {
                           <section className='flex flex-col gap-8 mt-8'>
                             {
                               bookingHistory.map((item,index)=>{
-                                
+                                 //stars rating
+                                const rating = item.rating;
+                                const stars = [];
+                                for (let i = 0; i < 5; i++) {
+                                  if (i < rating) {
+                                    stars.push(<BsStarFill key={i} color="#29AFFD" fontSize='14px' />);
+                                  } else {
+                                    stars.push(<BsStar key={i} color="#29AFFD" fontSize='14px' />);
+                                  }
+                                }
                               
                                 return (
                                   <div  className='rounded-lg w-full p-5 bg-[#AED6EF] '  key={index} >
@@ -118,7 +127,11 @@ const TrackBooking = () => {
                                   <   div className='w-[200px] h-[200px]  bg-white rounded-lg'>
                                          <img src={item?.driverInfo?.driverImageSrc } alt="driver img" className='w-full h-full'/>
                                       </div> 
-                                      <p className='font-semibold'>Name: {item?.driverInfo?.driverName}</p>                                  
+                                      <p className='font-semibold'>Name: {item?.driverInfo?.driverName}</p> 
+                                      <div className='flex gap-1'>
+                                          <span>Ratings:</span>
+                                          <div className='flex gap-1'>{stars}</div>
+                                      </div>                                 
                                   </div>
                                   <div className='text-sm basis-1/2 flex flex-col gap-3'>
                                       <span className='font-bold text-[16px]'>Customer Details</span>
