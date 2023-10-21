@@ -44,10 +44,10 @@ const TrackBooking = () => {
        id:''
     }
   ])
-  const bookingArr: { [x: string]: any; id: string; }[] = []
   //modal
   const [modal,setModal]=useState(false)
   const [activeModal, setActiveModal] = useState(-1);
+
 
 
   //routing
@@ -85,6 +85,9 @@ const TrackBooking = () => {
         querySnapshot.forEach((doc) => {
           itemsArr.push({ ...doc.data(), id: doc.id });
         });
+        let bookingArr: {
+          [x: string]: any; id: string; 
+        }[] = [];
         itemsArr.forEach((item)=>{
           if(session?.user?.email  == item?.userId){
             bookingArr.push(item)
@@ -94,8 +97,10 @@ const TrackBooking = () => {
         setBookingArray(bookingArr as [])
       });
     
+      // Return a function to unsubscribe from the listener when the component unmounts
       return () => unsubscribe();
     }, []);
+    
     //romans 5:15
   return (
         <section>
@@ -113,9 +118,9 @@ const TrackBooking = () => {
                                 const stars = [];
                                 for (let i = 0; i < 5; i++) {
                                   if (i < rating) {
-                                    stars.push(<BsStarFill key={i} color="#29AFFD" fontSize='14px' />);
+                                    stars.push(<BsStarFill key={i} color="#2387FE" fontSize='14px' />);
                                   } else {
-                                    stars.push(<BsStar key={i} color="#29AFFD" fontSize='14px' />);
+                                    stars.push(<BsStar key={i} color="#2387FE" fontSize='14px' />);
                                   }
                                 }
                               
@@ -128,7 +133,7 @@ const TrackBooking = () => {
                                          <img src={item?.driverInfo?.driverImageSrc } alt="driver img" className='w-full h-full'/>
                                       </div> 
                                       <p className='font-semibold'>Name: {item?.driverInfo?.driverName}</p> 
-                                      <div className='flex gap-1'>
+                                      <div className='flex gap-1 items-center max-sm:justify-center'>
                                           <span>Ratings:</span>
                                           <div className='flex gap-1'>{stars}</div>
                                       </div>                                 
@@ -153,7 +158,7 @@ const TrackBooking = () => {
                                    <span className='cursor-pointer flex items-center '><BsFillTrashFill/> <span className='max-xsm:hidden'>Delete History</span></span>
                                   </div>
                                   {activeModal === index && (
-                                    <StarRating propUseState={setModal} modal={modal} propSecondUseState={setActiveModal} tripId={item.id}/>
+                                    <StarRating propUseState={setModal}  modal={modal} propSecondUseState={setActiveModal} tripId={item.id}/>
                                   )}
 
                                 </div>
