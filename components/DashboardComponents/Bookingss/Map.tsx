@@ -33,44 +33,50 @@ const Map: React.FC<Iprop> = ({ position, secondPosition }) => {
     polyline.addTo(map);
 
   return (
-    <section className=''>
+        <>
+        {
+            typeof window !== 'undefined'?    
+          <section className=''>
 
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        {position && (
-          <Marker
-            icon={
-              new L.Icon({
-                iconUrl: '/cartooncar.png',
-                iconRetinaUrl: '/cartooncar.png',
-                iconSize: [50, 50],
-                iconAnchor: [12.5, 41],
-                popupAnchor: [0, -41],
-                shadowSize: [41, 41],
-              })
-            }
-            position={position}
-          >
-            <Popup>Take a trip with FastKar</Popup>
-          </Marker>
-        )}
-        {secondPosition && (
-          <Marker
-            icon={
-              new L.Icon({
-                iconUrl: '/cartooncar.png',
-                iconRetinaUrl: '/cartooncar.png',
-                iconSize: [50, 50],
-                iconAnchor: [12.5, 41],
-                popupAnchor: [0, -41],
-                shadowSize: [41, 41],
-              })
-            }
-            position={secondPosition}
-          >
-            <Popup>Take a trip with FastKar</Popup>
-          </Marker>
-        )}
-    </section>
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          {position && (
+            <Marker
+              icon={
+                new L.Icon({
+                  iconUrl: '/cartooncar.png',
+                  iconRetinaUrl: '/cartooncar.png',
+                  iconSize: [50, 50],
+                  iconAnchor: [12.5, 41],
+                  popupAnchor: [0, -41],
+                  shadowSize: [41, 41],
+                })
+              }
+              position={position}
+            >
+              <Popup>Take a trip with FastKar</Popup>
+            </Marker>
+          )}
+          {secondPosition && (
+            <Marker
+              icon={
+                new L.Icon({
+                  iconUrl: '/cartooncar.png',
+                  iconRetinaUrl: '/cartooncar.png',
+                  iconSize: [50, 50],
+                  iconAnchor: [12.5, 41],
+                  popupAnchor: [0, -41],
+                  shadowSize: [41, 41],
+                })
+              }
+              position={secondPosition}
+            >
+              <Popup>Take a trip with FastKar</Popup>
+            </Marker>
+          )}
+      </section>
+         : null
+        }
+        </>
   );
 };
 
