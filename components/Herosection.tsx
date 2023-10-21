@@ -13,20 +13,21 @@ const Herosection = () => {
                   variants={fadeIn('down', 0.2)}
                   initial='hidden'
                   whileInView={'show'}
-                  viewport={{once: false,amount:0.6}}
-               className='md:text-[50px] max-md:text-[35px] font-bold'>Your Swift, <span className='text-[#2387FE]'>Secure</span>, and Reliable Transportation Solution</motion.h1>
+                  viewport={{once: false,amount:0.2}}
+               className='page-transition md:text-[50px] max-md:text-[35px] font-bold'>Your Swift, <span className='text-[#2387FE]'>Secure</span>, and Reliable Transportation Solution</motion.h1>
                <motion.p
                 variants={fadeIn('down', 0.3)}
-                initial='hidden'
+                initial='visible'
                 whileInView={'show'}
                 viewport={{once: false,amount:0.6}}
+                className='page-transition'
                ><span className='text-[#2387FE]'>FastKar</span> ensures seamless journeys, offering swift, dependable, and efficient transportation services for your convenience and peace of mind.</motion.p>
                <motion.div
                   variants={fadeIn('down', 0.4)}
-                  initial='hidden'
+                  initial='visible'
                   whileInView={'show'}
-                  viewport={{once: false,amount:0.8}}                 
-               className='flex gap-11 max-xsm:gap-5 mt-7'>
+                  viewport={{once: false,amount:0.2}}                 
+               className='page-transition flex gap-11 max-xsm:gap-5 mt-7'>
                     <BookRideButton showIcon={true}/>
                     <a href="#" className='py-2 px-3 max-xsm:text-sm   rounded-md bg-[#2b2a2a] text-white flex items-center gap-3'> 
                     <span>Learn More</span>
@@ -36,9 +37,10 @@ const Herosection = () => {
          </section>
          <motion.section 
                   variants={fadeIn('up', 0.2)}
-                  initial='hidden'
+                  initial='visible'
                   whileInView={'show'}
-                  viewport={{once: false,amount:0.6}}         
+                  viewport={{once: false,amount:0.4}}  
+                  className='page-transition'       
          >
               <div className='lg:w-[650px] lg:h-[480px] max-lg:w-[500px] max-lg:h-[370px]  max-md:hidden'>
               <img src="/herobg.png" alt="background" className='w-full h-full'/>

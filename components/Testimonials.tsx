@@ -4,7 +4,9 @@ import 'swiper/css'
 import { testimonials } from "@/constants";
 import Image from "next/image";
 import {BsStarFill} from 'react-icons/bs'
-import { Autoplay,Navigation } from 'swiper/modules';
+import {Navigation } from 'swiper/modules';
+import { motion } from "framer-motion";
+import { fadeIn } from "@/constants/variants";
 
 export const Testimonials = () => {
   return (
@@ -29,9 +31,13 @@ export const Testimonials = () => {
             stars.push(<BsStarFill key={i} color="#29AFFD" fontSize='14px' />)
           }
 
-
              return <SwiperSlide key={index}>
-                 <div className="max-w-[370px] p-6 max-xsm:p-3 flex flex-col gap-5 rounded-[1rem] mx-auto  bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] ">
+                 <motion.div
+                 variants={fadeIn('down', user.delay)}
+                initial='hidden'
+                whileInView={'show'}
+                viewport={{once: false,amount:0.6}}            
+                 className="page-transition max-w-[370px] p-6 max-xsm:p-3 flex flex-col gap-5 rounded-[1rem] mx-auto  bg-white shadow-[0_3px_10px_rgb(0,0,0,0.2)] ">
                     <div className="flex ">{stars}</div>
                     <p className="text-gray-700 text-sm ">{user.reviews}</p>
                     <div className="flex gap-3">
@@ -41,7 +47,7 @@ export const Testimonials = () => {
                         <span >{user.description}</span>
                      </div>
                   </div>
-                 </div>
+                 </motion.div>
                 
 
              </SwiperSlide>

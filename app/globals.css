@@ -19,6 +19,13 @@
   border-radius: 5px;
 }
 
+
+.page-transition {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #AED6EF;

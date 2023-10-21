@@ -87,19 +87,22 @@ export const testimonials = [
         name: 'Mike Ukumbe',
         image: '/user1.png',
         reviews:'"FastKar exceeded my expectations! I was amazed by their efficient service that got me to my destination hassle-free. The affordability combined with their commitment to safety truly set them apart',
-        description: 'FastKar User'
+        description: 'FastKar User',
+        delay:0.2
     },
     {
         name: 'Claire Victory',
         image: '/user3.png',
         reviews:"Safety has always been my top concern when choosing a ride service. FastKar's dedication to safety standards, combined with their affordability, made them my go-to choice. Highly recommend and trust!",
-        description: 'CEO Umbquie'
+        description: 'CEO Umbquie',
+        delay: 0.5
     },
     {
         name: 'Bryan Magixx',
         image: '/user2.png',
         reviews:'FastKar has redefined my travel experience. The seamless booking process, efficient rides, and pocket-friendly prices make it my preferred option. I feel secure and enjoy a stress-free ride every time.',
-        description: 'Actor'
+        description: 'Actor',
+        delay: 0.8,
     },
 
 ]
