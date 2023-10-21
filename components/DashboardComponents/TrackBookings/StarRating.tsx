@@ -18,17 +18,6 @@ interface Iprop{
 const StarRating:React.FC<Iprop> = ({propUseState, modal, propSecondUseState, tripId}) => {
   const [rating, setRating] = useState(0);
   const [filledStars, setFilledStars] = useState([false, false, false, false, false]);
-  console.log(tripId)
-
-
-  //updating the db with the rating
-  const updateItem = async() =>{
-    const docRef = doc(db, "items", tripId as string);
-    await updateDoc(docRef, {
-    rating: rating
-    });
-  }
-
   const handleStarClick = (starIndex:any) => {
     const newRating = starIndex + 1;
     setRating(newRating);
@@ -58,6 +47,17 @@ const StarRating:React.FC<Iprop> = ({propUseState, modal, propSecondUseState, tr
     }
   }
 
+    //updating the db with the rating
+    const updateItem = async() =>{
+      const docRef = doc(db, "items", tripId as string);
+      await updateDoc(docRef, {
+      rating: rating
+      });
+      setTimeout(() => {
+         closeModal()
+      }, 1000);
+    }
+
   return (
     <div className='fixed inset-0 slg:left-[270px] bg-[#2386fe71] overflow-hidden flex items-center justify-center'>
           <div className='bg-white rounded-lg w-[600px] h-[350px] relative top-[10%] max-sm:w-[350px] max-xsm:w-[270px] flex flex-col justify-center items-center gap-5 p-5 text-center'>
@@ -77,7 +77,7 @@ const StarRating:React.FC<Iprop> = ({propUseState, modal, propSecondUseState, tr
                 </span>
               ))}
              </div>
-             <ComplaintBox cta='Feedback Sent' initCta='Send Feedback' height='h-[100px]' div='flex justify-center flex-col' placeholder='feedback'/>
+             <ComplaintBox cta='Feedback Sent' initCta='Send Feedback' height='h-[100px]' div='flex justify-center flex-col' placeholder='feedback' updateItem={updateItem}/>
              <div className='text-[#2386fe] text-lg absolute right-[20px] top-[10px] cursor-pointer' onClick={()=>closeModal()}><FaTimes/></div>
           </div>
 

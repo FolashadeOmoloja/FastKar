@@ -8,15 +8,19 @@ interface Iprops{
   smWidth?:string
   div?: string
   placeholder?: string
+  updateItem?: () => void;
 }
 
-const ComplaintBox:React.FC<Iprops> = ({cta='Complaint Sent', initCta='Send Complaint', height='h-[200px]', smWidth='w-[300px]', div='', placeholder='complaints'}) => {
+const ComplaintBox:React.FC<Iprops> = ({cta='Complaint Sent', initCta='Send Complaint', height='h-[200px]', smWidth='w-[300px]', div='', placeholder='complaints', updateItem}) => {
   const [complaint, setComplaint] = useState('');
   const [complaintSent, setComplaintSent] = useState(false);
 
   const handleComplaintSubmit = () => {
     setComplaint('');
     setComplaintSent(!complaintSent);
+    if(updateItem){
+      updateItem()
+    }
   };
 
   return (
