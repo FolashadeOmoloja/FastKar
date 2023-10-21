@@ -3,6 +3,7 @@ import {HiLocationMarker} from 'react-icons/hi'
 import {BsFillCarFrontFill} from 'react-icons/bs'
 import {BsCalendarHeartFill} from 'react-icons/bs'
 
+
 interface Iprop{
      pt?: string
 }
