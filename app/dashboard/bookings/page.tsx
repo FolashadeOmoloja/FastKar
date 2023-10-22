@@ -7,9 +7,11 @@ import dynamic from 'next/dynamic'
 
 
 const DynamicBooking = dynamic(() => import('@/components/DashboardComponents/Bookingss/Booking'), {
-  loading: () => <p>Map is loading</p>,
+  loading: () => <p className="text-lg font-semibold text-[#2387FE]">Map is loading ...</p>,
   ssr: false
 });
+
+
 
 
 const Bookings = () => {
@@ -36,17 +38,20 @@ const Bookings = () => {
 
 
               : secondShow?
-              <TripDetails tripDetailObject={tripDetailObject as {
-                pick:'',
-                drop:'',
-                duration: '',
-                distance: '',
-                price: 0,
-                vehicleType: '',
-                vehImg: ''
-                
-              } } propUseState={setShow} propSecondUseState={setSecondShow} propThirdUseState={setUniqueId}
-              />: <TripConfirmed uniqueID={uniqueId}/>
+              typeof window !== 'undefined' && (
+                <TripDetails tripDetailObject={tripDetailObject as {
+                  pick:'',
+                  drop:'',
+                  duration: '',
+                  distance: '',
+                  price: 0,
+                  vehicleType: '',
+                  vehImg: ''
+                  
+                } } propUseState={setShow} propSecondUseState={setSecondShow} propThirdUseState={setUniqueId}
+                />
+              )              
+: <TripConfirmed uniqueID={uniqueId}/>
 
             }
       

@@ -1,7 +1,13 @@
-import { useForm } from 'react-hook-form';
-import TripDetailsForm from './TripDetailsForm';
+import { useEffect, useState } from 'react';
 import TripCards from './TripCards';
+import dynamic from 'next/dynamic'
 
+
+
+const DynamicTripDetailsForm = dynamic(() => import('./TripDetailsForm'), {
+  loading: () => <p className="text-lg font-semibold text-[#2387FE]">loading ...</p>,
+  ssr: false
+});
 
 interface Iprop {
      tripDetailObject?: {
@@ -19,7 +25,11 @@ interface Iprop {
   }
 
 const TripDetails:React.FC<Iprop> = ({tripDetailObject, propUseState, propSecondUseState,propThirdUseState}) => {
-
+  const [isClient, setIsClient] = useState(false)
+ 
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
     const handleClick = () =>{
           if(propUseState){
             propUseState(true)
@@ -29,11 +39,13 @@ const TripDetails:React.FC<Iprop> = ({tripDetailObject, propUseState, propSecond
 
   return (
          <section>
-           <section className='flex gap-[20px] max-xl:flex-col'>
-           <TripDetailsForm tripDetailObject={tripDetailObject} 
-           propSecondUseState={propSecondUseState}
-           propThirdUseState={propThirdUseState}
-           />
+           <section className='flex gap-[20px] max-xl:flex-col'  suppressHydrationWarning = {true}>
+           {
+            <DynamicTripDetailsForm tripDetailObject={tripDetailObject} 
+            propSecondUseState={propSecondUseState}
+            propThirdUseState={propThirdUseState}
+            />
+           }
            <TripCards 
            distance={tripDetailObject?.distance}
            duration={tripDetailObject?.duration}
