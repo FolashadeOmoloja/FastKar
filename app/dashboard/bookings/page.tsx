@@ -1,10 +1,15 @@
 "use client"
-import Booking from "@/components/DashboardComponents/Bookingss/Booking"
 import TripDetails from "@/components/DashboardComponents/Bookingss/TripDetails/TripDetails"
 import TripConfirmed from "@/components/DashboardComponents/Bookingss/TripConfirmed/TripConfirmed"
 import { useState } from "react"
 import { SideNav } from "@/components/DashboardComponents/SideNav/SideNav"
+import dynamic from 'next/dynamic'
 
+
+const DynamicBooking = dynamic(() => import('@/components/DashboardComponents/Bookingss/Booking'), {
+  loading: () => <p>Map is loading</p>,
+  ssr: false
+});
 
 
 const Bookings = () => {
@@ -23,9 +28,13 @@ const Bookings = () => {
   return (
         <section >
             <SideNav activeItem={1}/>
-            {
+             {
               show? 
-              <Booking propSecondUseState={setShow} propUseState={setTripdetailObject}/>
+              typeof window !== 'undefined' && (
+                <DynamicBooking propSecondUseState={setShow} propUseState={setTripdetailObject}/>
+              )
+
+
               : secondShow?
               <TripDetails tripDetailObject={tripDetailObject as {
                 pick:'',

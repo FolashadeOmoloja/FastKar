@@ -4,15 +4,10 @@ import AutocompleteAddress from "./Autocompleteaddress"
 // @ts-ignore
 import { OpenStreetMapProvider} from 'leaflet-geosearch';
 import { calculateDistance, estimateCarTravelTime } from "@/constants";
-
-import dynamic from 'next/dynamic'
-import { MapContainer } from "react-leaflet";
 import CarList from "./CarList";
+import React from "react";
+import LeafletMap from "./LeafletMap";
 
-
-const DynamicMap = dynamic(() => import('./LeafletMap'), {
-  ssr: false
-});
 
 interface Iprop {
   propUseState?: (value: {
@@ -78,7 +73,7 @@ const Booking:React.FC<Iprop> = ({propUseState, propSecondUseState}) => {
         <section className="relative basis-[70%] h-[70vh]  rounded-lg">
           {
             typeof window !== 'undefined' && (
-              <DynamicMap markerPosition={markerPosition} secondMarkerPosition={secondMarkerPosition}/>
+              <LeafletMap markerPosition={markerPosition} secondMarkerPosition={secondMarkerPosition}/>
             )
           }
            

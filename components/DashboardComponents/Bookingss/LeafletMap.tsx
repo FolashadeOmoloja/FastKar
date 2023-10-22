@@ -1,12 +1,10 @@
 import { MapContainer } from "react-leaflet";
 import Map from "./Map";
-
 interface Iprop {
     markerPosition?: [] | any;
     secondMarkerPosition?: [] | any;
   }
   
-
 const LeafletMap:React.FC<Iprop> = ({markerPosition,secondMarkerPosition}) => {
   return (
     <>
