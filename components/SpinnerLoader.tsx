@@ -31,12 +31,8 @@ const loadingAnimation = keyframes`
 `;
 
 const SpinnerLoader: React.FC<SpinnerProps> = ({
-  signalColor = 'conic-gradient(from 227.1deg at 50% 50%, #75c9fa  0deg, #3EB131 360deg)',
+  signalColor = 'conic-gradient(from 227.1deg at 50% 50%, #75c9fa  0deg, #2387FE 360deg)',
   warning = 'Loading...',
-  innerDivWidth = '115px',
-  innerDivHeight = '115px',
-  outerDivWidth = '140px',
-  outerDivHeight = '140px',
 }) => {
   return (
     <div className="flex flex-col justify-center items-center font-bold text-2xl font-poppins space-y-6">
@@ -49,7 +45,7 @@ const SpinnerLoader: React.FC<SpinnerProps> = ({
         }}
       >
         <div
-          className={`w-[115px] h-[115px] rounded-full`}
+          className={`w-[115px] h-[115px] bg-[#E3F0F9] rounded-full`}
         ></div>
       </div>
       <span>{warning}</span>
