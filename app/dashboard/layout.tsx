@@ -1,3 +1,4 @@
+import CustomLoader from '@/components/CustomLoader'
 import Header from '@/components/DashboardComponents/Header'
 import MobileSidebar from '@/components/DashboardComponents/SideNav/MobileNav'
 
@@ -10,9 +11,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
+
         <Header/>
         <MobileSidebar/>
         <section className="dashboardsection h-full w-full p-8 z-0 max-xsm:p-5">
+           <CustomLoader />
             {children}
         </section>
       </body>
