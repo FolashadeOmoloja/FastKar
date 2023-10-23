@@ -8,10 +8,8 @@ import CustomerCareIcon from "../CustomerCareIcon"
 const CarListPage = () => {
   return (
     <section>
-      <div className="flex justify-between mb-7 font-semibold">
-      <h3 className='text-[20px] '>FastKar Catalog</h3>
-      <p className='text-sm max-sm:hidden'>Explore Our Cars</p>
-      </div>
+      <h3 className="text-[30px] font-semibold text-[#2387FE]">FastKar Catalog</h3>
+      <span className="text-sm mb-5 font-semibold">Explore Our Cars</span>
       <section className="flex gap-7 flex-wrap">
            {
                vehicles.map((veh, index)=>{
