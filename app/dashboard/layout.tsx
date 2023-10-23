@@ -16,7 +16,7 @@ export default function RootLayout({
         <Header/>
         <MobileSidebar/>
         <Suspense fallback={<Loading/>}>
-        <section className="dashboardsection h-full w-full p-8 z-0 max-xsm:p-5">
+        <section className="dashboardsection h-full w-full p-8 z-0 max-xsm:p-5 max-xsm:pr-[10px]">
             {children}
         </section>
         </Suspense>

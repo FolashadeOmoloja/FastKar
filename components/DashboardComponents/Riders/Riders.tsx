@@ -4,8 +4,10 @@ import CustomerCareIcon from "../CustomerCareIcon"
 const Riders = () => {
   return (
     <section className="relative">   
-         <h3 className="text-[30px] font-semibold text-[#2387FE]">FastKar Drivers</h3>
-          <span className="text-sm mb-5 font-semibold">Know who's driving you</span>
+      <div className="mb-5">
+          <h3 className="text-[30px] font-semibold text-[#2387FE]">FastKar Drivers</h3>
+          <span className="text-sm  font-semibold">Know who's driving you</span> 
+      </div>
       <section className="grid grid-cols-2 gap-3 max-sm:grid-cols-1">
              {
                 DriverData.map((veh,index)=>{
