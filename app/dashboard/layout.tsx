@@ -1,6 +1,7 @@
-import CustomLoader from '@/components/CustomLoader'
 import Header from '@/components/DashboardComponents/Header'
 import MobileSidebar from '@/components/DashboardComponents/SideNav/MobileNav'
+import { Suspense } from 'react'
+import Loading from './loading'
 
 export default function RootLayout({
   children,
@@ -14,10 +15,12 @@ export default function RootLayout({
 
         <Header/>
         <MobileSidebar/>
+        <Suspense fallback={<Loading/>}>
         <section className="dashboardsection h-full w-full p-8 z-0 max-xsm:p-5">
-           <CustomLoader />
             {children}
         </section>
+        </Suspense>
+
       </body>
     </html>
   )

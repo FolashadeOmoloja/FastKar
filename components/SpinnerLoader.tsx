@@ -1,3 +1,4 @@
+"use client"
 import { keyframes } from '@emotion/react';
 
 interface SpinnerProps {
@@ -40,7 +41,7 @@ const SpinnerLoader: React.FC<SpinnerProps> = ({
   return (
     <div className="flex flex-col justify-center items-center font-bold text-2xl font-poppins space-y-6">
       <div
-        className={`w-${outerDivWidth} h-${outerDivHeight} flex justify-center items-center rounded-full border border-transparent animate-spin`}
+        className={`w-[140px] h-[140px] flex justify-center items-center rounded-full border border-transparent animate-spin`}
         style={{
           background: signalColor,
           transform: 'rotate(-90deg)',
@@ -48,7 +49,7 @@ const SpinnerLoader: React.FC<SpinnerProps> = ({
         }}
       >
         <div
-          className={`w-${innerDivWidth} h-${innerDivHeight} bg-white rounded-full`}
+          className={`w-[115px] h-[115px] bg-white rounded-full`}
         ></div>
       </div>
       <span>{warning}</span>

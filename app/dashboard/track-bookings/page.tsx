@@ -3,7 +3,7 @@ import { SideNav } from "@/components/DashboardComponents/SideNav/SideNav"
 import dynamic from 'next/dynamic'
 
 const DynamicTrackBooking = dynamic(() => import("@/components/DashboardComponents/TrackBookings/TrackBooking"), {
-  loading: () => <DotLoader color="#2387FE" text="Map is loading"/>,
+  loading: () => <DotLoader color="#2387FE" text="Booking History Loading"/>,
   ssr: false
 });
 
