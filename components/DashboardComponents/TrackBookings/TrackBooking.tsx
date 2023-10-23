@@ -178,7 +178,7 @@ const TrackBooking = () => {
                           </section>
                         ): (
                           <div className='flex flex-col text-center items-center justify-center mt-[10px]'>
-                                <div><img src="/CTA.png" alt="img"  className='w-full h-full'/></div>
+                                <div><img src="/cta.png" alt="img"  className='w-full h-full'/></div>
                                 <span className="text-[20px] font-semibold text-[#2387FE]">Your Booking History is empty at the moment</span>
                                 <button className='book-button sm:w-[200px] mt-5' onClick={()=>{ handleClick()}}>Start Booking</button>
                           </div>

@@ -11,7 +11,7 @@ const TripConfirmed:React.FC<Iprop> = ({uniqueID }) => {
   return (
     <section className='flex flex-col justify-center items-center gap-5 text-center'>
            <div>
-              <img src="/CTA.png" alt="img"  className='w-full h-full'/>
+              <img src="/cta.png" alt="img"  className='w-full h-full'/>
            </div>
            <p className='font-semibold sm:text-[30px] text-[18px]  flex items-center'>Booking Successful <span className='mx-1 max-md:hidden'><AiOutlineCheck/> </span> Your Ride Is On Its Way! </p>
            <span> Thank You For Booking With Us.</span>
