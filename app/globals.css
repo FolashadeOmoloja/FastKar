@@ -142,6 +142,50 @@ border: 1px solid white;
 }
 
 
+/* DotLoader.module.css */
+@keyframes loadingText {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+}
+
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color, black);
+}
+
+.loader-text {
+  width: 163.59px;
+  text-align: left;
+}
+
+.ellipsis::after {
+  content: "";
+  animation: loadingText 3s linear infinite;
+}
+
+.ellipsis {
+  font-size: 28px;
+  letter-spacing: 5px;
+}
+
+
+
 
 
 

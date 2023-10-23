@@ -4,10 +4,12 @@ import TripConfirmed from "@/components/DashboardComponents/Bookingss/TripConfir
 import { useState } from "react"
 import { SideNav } from "@/components/DashboardComponents/SideNav/SideNav"
 import dynamic from 'next/dynamic'
+import DotLoader from "@/components/DashboardComponents/DotLoader"
 
 
 const DynamicBooking = dynamic(() => import('@/components/DashboardComponents/Bookingss/Booking'), {
-  loading: () => <p className="text-lg font-semibold text-[#2387FE]">Map is loading ...</p>,
+  loading: () =>   <DotLoader color="#2387FE" text="Map is loading"/>,
+  // <p className="text-lg font-semibold text-[#2387FE]"> ...</p>
   ssr: false
 });
 
