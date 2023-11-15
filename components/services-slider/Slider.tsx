@@ -23,7 +23,7 @@ const Slider = () => {
 <div className="container mx-auto px-[60px] max-md:px-[20px] max-sm:px-0 max-xsm:max-w-xs">
    <Swiper
          autoplay={{
-          delay: 1000, // Adjust the delay as needed (in milliseconds)
+          delay: 1000, // Adjust the delay  (in milliseconds)
           disableOnInteraction: true, // Continue autoplay even when user interacts
        }}
    breakpoints={{
